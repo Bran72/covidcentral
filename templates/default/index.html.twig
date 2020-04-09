@@ -1,0 +1,23 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} | Accueil{% endblock %}
+
+{% block body %}
+<style>
+    .example-wrapper { margin: 2rem }
+    .example-wrapper h2 { position: relative; font-size: 2rem; text-align: center; font-weight: 300; margin: 30px auto; max-width: 60% }
+    .example-wrapper h2:after { content: ''; position: absolute; bottom: -30px; left: calc(50% - 200px); width: 400px; height: 1.5px; background: #000; }
+</style>
+
+<div class="example-wrapper">
+    <h2>La plateforme qui centralise tout ce qui concerne l'épidémie de COVID-19</h2>
+
+    <p style="margin: 4rem; text-align: center">Ici, peut-être une API ?</p>
+
+    <ul>
+        <li><a href="{{ path('depistage') }}">Dépistage</a></li>
+        <li><a href="{{ path('depistage') }}">Informations pratiques</a></li>
+        <li><a href="{{ path('depistage') }}">Sondage</a></li>
+    </ul>
+</div>
+{% endblock %}
