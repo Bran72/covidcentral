@@ -11,3 +11,8 @@ easy_admin:
                 fields: ['email', { property: 'username', label: "Nom d'utilisateur" }]
             search:
                 fields: ['email', 'username']
+    design:
+        assets:
+            css:
+                - 'bundles/easyadmin/app.scss'
+                - 'bundles/easyadmin/app.css'

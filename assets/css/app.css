@@ -7792,7 +7792,7 @@ nav h1 {
   text-transform: uppercase;
   font-weight: lighter; }
 
-nav h1 a {
+nav a, nav a:hover {
   color: #fff;
   text-decoration: none; }
 
@@ -7805,6 +7805,11 @@ nav > div {
 nav > div:last-child {
   justify-content: flex-end; }
 
+nav #signout {
+  width: 1rem;
+  fill: white;
+  filter: invert(100%) sepia(0%) saturate(7451%) hue-rotate(76deg) brightness(112%) contrast(107%); }
+
 #logo {
   max-width: 2.5rem;
   fill: white;
@@ -7814,29 +7819,78 @@ nav > div:last-child {
   font-size: .75rem;
   padding: .5rem;
   text-transform: uppercase;
-  border: 1px solid #fff;
   color: #fff;
   text-decoration: none; }
 
 .container-selection {
   display: flex;
-  justify-content: space-around; }
-
-.container-selection > div a {
-  display: flex;
-  height: 100%; }
+  justify-content: space-around;
+  flex-wrap: wrap;
+  overflow: hidden; }
+  .container-selection > div a {
+    display: block;
+    height: 100%;
+    color: white; }
+    .container-selection > div a :hover {
+      color: white;
+      text-decoration: none; }
+    .container-selection > div a > span {
+      width: 100%;
+      display: block; }
+  .container-selection .card_section_depistage {
+    background-color: rgba(37, 166, 154, 0.8); }
+    .container-selection .card_section_depistage .card_section_content > img {
+      margin-top: 1rem;
+      margin-right: 5rem; }
+    .container-selection .card_section_depistage .card_section_top, .container-selection .card_section_depistage .card_section_bottom {
+      background-color: rgba(37, 166, 154, 0.9); }
+  .container-selection .card_section_informations {
+    background-color: rgba(3, 155, 229, 0.8); }
+    .container-selection .card_section_informations .card_section_content > img {
+      margin-top: 1rem;
+      margin-right: 3rem; }
+    .container-selection .card_section_informations .card_section_top, .container-selection .card_section_informations .card_section_bottom {
+      background-color: rgba(3, 155, 229, 0.9); }
+  .container-selection .card_section_sondage {
+    background-color: rgba(186, 169, 222, 0.8); }
+    .container-selection .card_section_sondage .card_section_content > img {
+      margin-top: 1rem;
+      margin-right: 3rem; }
+    .container-selection .card_section_sondage .card_section_top, .container-selection .card_section_sondage .card_section_bottom {
+      background-color: rgba(186, 169, 222, 0.9); }
+  .container-selection .card_section_content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    height: calc(100% - 4rem);
+    margin-bottom: -4rem;
+    z-index: 0; }
+    .container-selection .card_section_content .card_section_bulle {
+      position: relative; }
+      .container-selection .card_section_content .card_section_bulle span {
+        position: absolute;
+        display: block;
+        top: 0;
+        left: 0;
+        font-size: 1rem;
+        margin: 1rem; }
+        .container-selection .card_section_content .card_section_bulle span h3 {
+          font-size: 1.5rem;
+          font-weight: bold; }
+  .container-selection .card_section_top, .container-selection .card_section_bottom {
+    width: 100%;
+    height: 4rem;
+    -webkit-box-shadow: 0px 2px 26px -10px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 0px 2px 26px -10px rgba(0, 0, 0, 0.75);
+    box-shadow: 0px 2px 26px -10px rgba(0, 0, 0, 0.75); }
 
 div[class^="card_section_"] {
-  flex: 1;
-  height: 20rem; }
-
-.card_section_depistage {
-  background-color: #25A69A; }
-
-.card_section_informations {
-  background-color: #039BE5; }
-
-.card_section_sondage {
-  background-color: #BAA9DE; }
+  flex: 1; }
+  div[class^="card_section_"] .card_section_content > img {
+    transition: margin-right .25s ease-in-out; }
+  div[class^="card_section_"]:hover .card_section_content > img {
+    margin-right: 0; }
 
 /*# sourceMappingURL=app.css.map */
