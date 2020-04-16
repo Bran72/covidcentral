@@ -20,7 +20,10 @@
                 {% if not is_granted('IS_AUTHENTICATED_FULLY') %}
                     <a class="log_btn" href="{{ path('app_login') }}">Se connecter</a>
                 {% else %}
-                    <a class="log_btn" href="{{ path('app_logout') }}">Se déconnecter</a>
+                    <a href="{{ path('profile') }}">{{ app.user.username }}</a>
+                    <a class="log_btn" href="{{ path('app_logout') }}">
+                        <img id="signout" src="{{ asset('img/sign-out-alt-solid.svg') }}" alt="">
+                    </a>
                 {% endif %}
             </div>
         </nav>

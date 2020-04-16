@@ -3,9 +3,11 @@
 {% block title %} | Dépistage{% if is_granted('IS_AUTHENTICATED_FULLY') %} de {{ user.username }} {% endif %}{% endblock %}
 
 {% block stylesheets %}
-    <style>
+    <style lang="scss">
         nav { display: flex; background: #039BE5 !important; }
     </style>
+    {{ encore_entry_link_tags('informations') }}
+
 {% endblock stylesheets %}
 
 {% block body %}
