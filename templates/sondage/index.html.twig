@@ -3,18 +3,21 @@
 {% block title %}Sondage Covid-19!{% endblock %}
 
 {% block body %}
-<style>
-    .form {
-        display: flex;
-        flex-direction: column;
-    }
 
-    .form label {
-        margin-top: 20px;
-    }
-</style>
+    <style>
+        .form {
+            width: 50%;
+            margin: 0 auto;
+        }
 
-    <h1>Sondage Covid-19!✅</h1>
+        .form label {
+            margin-top: 15px;
+            font-size: 24px;
+            font-weight: 600;
+        }
+    </style>
+
+    {% form_theme formSondage 'bootstrap_4_layout.html.twig' %}
 
     {{ form_start(formSondage, {'attr': {"class":"form"}}) }}
 
