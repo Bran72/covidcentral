@@ -1,3 +1,54 @@
 /*
   Here your custom style for the page 'informations'
  */
+
+nav { display: flex; background: #039BE5 !important;
+  > div {
+    &:first-child {
+      display: none;
+    }
+    &:nth-child(0n+2) {
+      flex-basis: 40%;
+      justify-content: center;
+    }
+    &:last-child {
+      flex-basis: 60%;
+      margin-top: -2rem;
+    }
+  }
+}
+
+.section_info {
+  display: flex;
+  flex-direction: row;
+  margin: 2rem;
+
+  min-height: 40rem;
+
+  .info_left-side {
+    display: flex;
+    flex-basis: 40%;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    text-align: center;
+    .info_img_container {
+      width: 100%;
+      padding: 2rem;
+      img {
+        width: 80%;
+      }
+    }
+  }
+  .info_right-size {
+    flex-basis: 60%;
+    background: #fff;
+    margin-top: -5rem;
+    margin-right: 3rem;
+    padding: 2rem;
+    border-radius: 15px;
+    -webkit-box-shadow: 2px 0px 30px -24px rgba(0,0,0,0.5);
+    -moz-box-shadow: 2px 0px 30px -24px rgba(0,0,0,0.5);
+    box-shadow: 2px 0px 30px -24px rgba(0,0,0,0.5);
+  }
+}
