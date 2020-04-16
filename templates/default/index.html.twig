@@ -15,7 +15,14 @@
 
     <div class="container-selection">
         <div class="card_section_depistage">
-            <a href="{{ path('depistage') }}">Dépistage</a>
+            <a href="{{ path('depistage') }}">
+                <span>
+                    Dépistage
+                </span>
+                <span>
+                    <img class="card_section_img" src="{{ asset('img/home/picto_depistage.png') }}" alt="Dépistage">
+                </span>
+            </a>
         </div>
         <div class="card_section_informations">
             <a href="{{ path('informations') }}">Informations pratiques</a>
