@@ -7792,7 +7792,7 @@ nav h1 {
   text-transform: uppercase;
   font-weight: lighter; }
 
-nav h1 a {
+nav a, nav a:hover {
   color: #fff;
   text-decoration: none; }
 
@@ -7805,6 +7805,11 @@ nav > div {
 nav > div:last-child {
   justify-content: flex-end; }
 
+nav #signout {
+  width: 1rem;
+  fill: white;
+  filter: invert(100%) sepia(0%) saturate(7451%) hue-rotate(76deg) brightness(112%) contrast(107%); }
+
 #logo {
   max-width: 2.5rem;
   fill: white;
@@ -7814,13 +7819,13 @@ nav > div:last-child {
   font-size: .75rem;
   padding: .5rem;
   text-transform: uppercase;
-  border: 1px solid #fff;
   color: #fff;
   text-decoration: none; }
 
 .container-selection {
   display: flex;
   justify-content: space-around;
+  flex-wrap: wrap;
   overflow: hidden; }
   .container-selection > div a {
     display: block;
@@ -7883,5 +7888,9 @@ nav > div:last-child {
 
 div[class^="card_section_"] {
   flex: 1; }
+  div[class^="card_section_"] .card_section_content > img {
+    transition: margin-right .25s ease-in-out; }
+  div[class^="card_section_"]:hover .card_section_content > img {
+    margin-right: 0; }
 
 /*# sourceMappingURL=app.css.map */
