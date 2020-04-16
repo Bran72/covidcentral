@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} | Accueil{% endblock %}
+
+{% block body %}
+<style>
+    .example-wrapper h2 { position: relative; font-size: 2rem; text-align: center; font-weight: 300; margin: 30px auto; max-width: 60% }
+    .example-wrapper h2:after { content: ''; position: absolute; bottom: -30px; left: calc(50% - 200px); width: 400px; height: 1.5px; background: #000; }
+</style>
+
+<div class="example-wrapper">
+    <h2>La plateforme qui centralise tout ce qui concerne l'épidémie de COVID-19</h2>
+
+    <p style="margin: 4rem; text-align: center">Ici, peut-être une API ?</p>
+
+    <div class="container-selection">
+        <div class="card_section_depistage">
+            <a href="{{ path('depistage') }}">
+                <span>
+                    Dépistage
+                </span>
+                <span>
+                    <img class="card_section_img" src="{{ asset('img/home/picto_depistage.png') }}" alt="Dépistage">
+                </span>
+            </a>
+        </div>
+        <div class="card_section_informations">
+            <a href="{{ path('informations') }}">Informations pratiques</a>
+        </div>
+        <div class="card_section_sondage">
+            <a href="{{ path('sondage') }}">Sondage</a>
+        </div>
+    </div>
+</div>
+{% endblock %}
