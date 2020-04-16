@@ -9,6 +9,7 @@ use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\NumberType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
+use Symfony\Component\Form\Extension\Core\Type\RadioType;
 
 
 class SondageType extends AbstractType
@@ -16,12 +17,12 @@ class SondageType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('q1', ChoiceType::class, [
-                'placeholder' => 'Choisi une option',
-                'choices'  => [
+            ->add('q1', ChoiceType::class,[
+                'choices' =>  [
                     'Oui' => true,
-                    'Non' => false,
-                ],
+                    'Non' => false,],
+                'multiple'=>false,
+                'expanded'=>true,
             ])
             ->add('q2', ChoiceType::class, [
                 'placeholder' => 'Choisi une option',

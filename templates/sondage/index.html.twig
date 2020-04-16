@@ -10,10 +10,25 @@
             margin: 0 auto;
         }
 
-        .form label {
+        .form label, legend {
             margin-top: 15px;
-            font-size: 24px;
+            font-size: 24px !important;
             font-weight: 600;
+        }
+
+        .radio-btn-group {
+            display: flex;
+        }
+
+        .radio-btn-group .form-check {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .radio-btn-group .form-check label {
+            margin-top: 6px;
+            margin-left: 40px;
         }
     </style>
 
@@ -22,7 +37,7 @@
     {{ form_start(formSondage, {'attr': {"class":"form"}}) }}
 
         {{ form_label(formSondage.q1, "Êtes-vous en télétravail ?") }}
-        {{ form_widget(formSondage.q1) }}
+        {{ form_widget(formSondage.q1, {'attr': {"class":"radio-btn-group"}}) }}
 
         {{ form_label(formSondage.q2, "Êtes-vous au chômage ou chômage partiel ?") }}
         {{ form_widget(formSondage.q2) }}
