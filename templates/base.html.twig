@@ -2,11 +2,35 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>{% block title %}Welcome!{% endblock %}</title>
+        <title>CovidCentral{% block title %}{% endblock %}</title>
+
+        <link href="https://fonts.googleapis.com/css?family=Quicksand&display=swap" rel="stylesheet">
+        {{ encore_entry_link_tags('app') }}
+
         {% block stylesheets %}{% endblock %}
     </head>
     <body>
+        <nav>
+            <div>&nbsp;</div>
+            <div>
+                <img id="logo" src="{{ asset('img/virus-solid.svg') }}" alt="">
+                <h1><a href="{{ path('home') }}">Covid<b>Central</b></a></h1>
+            </div>
+            <div>
+                {% if not is_granted('IS_AUTHENTICATED_FULLY') %}
+                    <a class="log_btn" href="{{ path('app_login') }}">Se connecter</a>
+                {% else %}
+                    <a class="log_btn" href="{{ path('app_logout') }}">Se déconnecter</a>
+                {% endif %}
+            </div>
+        </nav>
         {% block body %}{% endblock %}
-        {% block javascripts %}{% endblock %}
+        {% block javascripts %}
+            {{ encore_entry_script_tags('app') }}
+
+            <!-- Renders app.js & a webpack runtime.js file
+                <script src="/build/runtime.js"></script>
+                <script src="/build/app.js"></script> -->
+        {% endblock %}
     </body>
 </html>
