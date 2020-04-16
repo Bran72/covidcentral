@@ -15,13 +15,14 @@ class SondageType extends AbstractType
     {
         $builder
             ->add('q1', ChoiceType::class, [
+                'placeholder' => 'Choisi une option',
                 'choices'  => [
-                    'Maybe' => null,
                     'Oui' => true,
                     'Non' => false,
                 ],
             ])
             ->add('q2', ChoiceType::class, [
+                'placeholder' => 'Choisi une option',
                 'choices'  => [
                     'oui, au chômage technique' => 'oui, au chômage technique',
                     'oui, au chômage partiel' => 'oui, au chômage partiel',
@@ -29,9 +30,11 @@ class SondageType extends AbstractType
                 ],
             ])
             ->add('q3', NumberType::class, [
-                'html5'=>true
+                'html5'=>true,
+                'attr' => ['placeholder' => 'Entrer un chiffre']
             ])
             ->add('q4', ChoiceType::class, [
+                'placeholder' => 'Choisi une option',
                 'choices'  => [
                     'Pour les courses' => 'Pour les courses',
                     'Pour le travail' => 'Pour le travail',
@@ -39,6 +42,7 @@ class SondageType extends AbstractType
                 ],
             ])
             ->add('q5', ChoiceType::class, [
+                'placeholder' => 'Choisi une option',
                 'choices'  => [
                     '1 fois par semaine' => '1 fois par semaine',
                     '2 à 3 fois par semaine' => '2 à 3 fois par semaine',
@@ -46,20 +50,21 @@ class SondageType extends AbstractType
                 ],
             ])
             ->add('q6', ChoiceType::class, [
+                'placeholder' => 'Choisi une option',
                 'choices'  => [
-                    'Maybe' => null,
                     'Oui' => true,
                     'Non' => false,
                 ],
             ])
             ->add('q7', ChoiceType::class, [
+                'placeholder' => 'Choisi une option',
                 'choices'  => [
-                    'Maybe' => null,
                     'Oui' => true,
                     'Non' => false,
                 ],
             ])
             ->add('q8', ChoiceType::class, [
+                'placeholder' => 'Choisi une option',
                 'choices'  => [
                     'Par les réseaux sociaux' => 'Par les réseaux sociaux',
                     'Par le journal télévisé' => 'Par le journal télévisé',
@@ -68,8 +73,8 @@ class SondageType extends AbstractType
                 ],
             ])
             ->add('q9', ChoiceType::class, [
+                'placeholder' => 'Choisi une option',
                 'choices'  => [
-                    'Maybe' => null,
                     'Oui' => true,
                     'Non' => false,
                 ],
@@ -78,15 +83,15 @@ class SondageType extends AbstractType
                 'html5'=>true 
             ])
             ->add('q12', ChoiceType::class, [
+                'placeholder' => 'Choisi une option',
                 'choices'  => [
-                    'Maybe' => null,
                     'Oui' => true,
                     'Non' => false,
                 ],
             ])
             ->add('q11', ChoiceType::class, [
+                'placeholder' => 'Choisi une option',
                 'choices'  => [
-                    'Maybe' => null,
                     'Oui' => true,
                     'Non' => false,
                 ],
