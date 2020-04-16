@@ -1,0 +1,14 @@
+.container-selection {
+	display: flex;
+	justify-content: space-around;
+}
+.container-selection > div {
+}
+
+div[class^="card_section_"] {
+	flex: 1;
+	height: 20rem;
+}
+.card_section_depistage{background-color: #25A69A}
+.card_section_informations{background-color: #039BE5}
+.card_section_sondage{background-color: #BAA9DE}
