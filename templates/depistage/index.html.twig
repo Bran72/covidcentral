@@ -1,0 +1,40 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Dépistage COVID-19{% endblock %}
+
+{% block body %}
+<style>
+    .form {
+        display: flex;
+        flex-direction: column;
+    }
+    .form label {
+        margin-top: 20px;
+    }
+</style>
+    {{ form_start(formDepistage, {'attr': {"class":"form"}}) }}
+        {{ form_label(formDepistage.q1, "Depuis combien de jours possédez vous des symptômes ?") }}
+        {{ form_widget(formDepistage.q1) }}
+
+        {{ form_label(formDepistage.q2, "Avez vous de la toux ?") }}
+        {{ form_widget(formDepistage.q2) }}
+
+        {{ form_label(formDepistage.q3, "Avez vous de la fièvre ?") }}
+        {{ form_widget(formDepistage.q3) }}
+
+        {{ form_label(formDepistage.q4, "Si oui, indiquez la température") }}
+        {{ form_widget(formDepistage.q4) }}
+
+        {{ form_label(formDepistage.q5, "Avez vous été en contact avec une personne à risque ?") }}
+        {{ form_widget(formDepistage.q5) }}
+
+        {{ form_label(formDepistage.q6, "Avez vous du mal à respirer ?") }}
+        {{ form_widget(formDepistage.q6) }}
+
+        {{ form_label(formDepistage.q7, "Si possible, indiquez votre rythme cardiaque") }}
+        {{ form_widget(formDepistage.q7) }}
+
+        {{ form_label(formDepistage.q8, "Avez-vous été vacciné contre la grippe ?") }}
+        {{ form_widget(formDepistage.q8) }}
+    {{ form_end(formDepistage) }}
+{% endblock %}
