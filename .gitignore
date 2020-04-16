@@ -64,3 +64,6 @@
 
 # Embedded web-server pid file
 /.web-server-pid
+
+# PHP version
+.php-version
