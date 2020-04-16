@@ -16,19 +16,51 @@
     <div class="container-selection">
         <div class="card_section_depistage">
             <a href="{{ path('depistage') }}">
-                <span>
-                    Dépistage
-                </span>
-                <span>
+                <span class="card_section_top"></span>
+                <span class="card_section_content">
+                    <div class="card_section_bulle">
+                        <img class="card_section_img" src="{{ asset('img/home/bulle_depistage.png') }}" alt="Dépistage">
+                        <span>
+                            <h3>Vous pensez être atteint ?</h3>
+                            <p>Faites notre dépistage gratuit en ligne, et prenez rendez-vous avec le médecin le plus proche!</p>
+                        </span>
+                    </div>
                     <img class="card_section_img" src="{{ asset('img/home/picto_depistage.png') }}" alt="Dépistage">
                 </span>
+                <span class="card_section_bottom"></span>
             </a>
         </div>
         <div class="card_section_informations">
-            <a href="{{ path('informations') }}">Informations pratiques</a>
+            <a href="{{ path('informations') }}">
+                <span class="card_section_top"></span>
+                <span class="card_section_content">
+                    <div class="card_section_bulle">
+                        <img class="card_section_img" src="{{ asset('img/home/bulle_info.png') }}" alt="Informations pratiques">
+                        <span>
+                            <h3>Je souhaite m’informer !</h3>
+                            <p>Besoin de faire un jogging ? Téléchargez directement l’attestion dérogatoire et consultez les bonnes pratiques à adopter!</p>
+                        </span>
+                    </div>
+                    <img class="card_section_img" src="{{ asset('img/home/picto_info.png') }}" alt="Informations pratiques">
+                </span>
+                <span class="card_section_bottom"></span>
+            </a>
         </div>
         <div class="card_section_sondage">
-            <a href="{{ path('sondage') }}">Sondage</a>
+            <a href="{{ path('sondage') }}">
+                <span class="card_section_top"></span>
+                <span class="card_section_content">
+                    <div class="card_section_bulle">
+                        <img class="card_section_img" src="{{ asset('img/home/bulle_sondage.png') }}" alt="Sondage">
+                        <span>
+                            <h3>Je veux aider la recherche</h3>
+                            <p>Répondez rapidement à ce questionnaire anonyme! Les données seront analysées par des équipes médicales.</p>
+                        </span>
+                    </div>
+                    <img class="card_section_img" src="{{ asset('img/home/picto_sondage.png') }}" alt="Sondage">
+                </span>
+                <span class="card_section_bottom"></span>
+            </a>
         </div>
     </div>
 </div>
