@@ -1,21 +1,58 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello SondageController!{% endblock %}
+{% block title %}Sondage Covid-19!{% endblock %}
 
 {% block body %}
 <style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
+    .form {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .form label {
+        margin-top: 20px;
+    }
 </style>
 
-<div class="example-wrapper">
-    <h1>Hello {{ controller_name }}! ✅</h1>
+    <h1>Sondage Covid-19!✅</h1>
 
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code><a href="{{ 'C:/Users/Anthony/Desktop/covidcentral/src/Controller/SondageController.php'|file_link(0) }}">src/Controller/SondageController.php</a></code></li>
-        <li>Your template at <code><a href="{{ 'C:/Users/Anthony/Desktop/covidcentral/templates/sondage/index.html.twig'|file_link(0) }}">templates/sondage/index.html.twig</a></code></li>
-    </ul>
-    {{form(formSondage)}}
-</div>
+    {{ form_start(formSondage, {'attr': {"class":"form"}}) }}
+
+        {{ form_label(formSondage.q1, "Êtes-vous en télétravail ?") }}
+        {{ form_widget(formSondage.q1) }}
+
+        {{ form_label(formSondage.q2, "Êtes-vous au chômage ou chômage partiel ?") }}
+        {{ form_widget(formSondage.q2) }}
+
+        {{ form_label(formSondage.q3, "Combien de fois sortez-vous par jour ?") }}
+        {{ form_widget(formSondage.q3) }}
+
+        {{ form_label(formSondage.q4, "Pourquoi sortez-vous le plus souvent ?") }}
+        {{ form_widget(formSondage.q4) }}
+
+        {{ form_label(formSondage.q5, "Combien de fois faites vous les courses par semaine ?") }}
+        {{ form_widget(formSondage.q5) }}
+
+        {{ form_label(formSondage.q6, "Lavez vous  vos mains après chaque sortie ?") }}
+        {{ form_widget(formSondage.q6) }}
+
+        {{ form_label(formSondage.q7, "Avez vous des gants ou des masques ?") }}
+        {{ form_widget(formSondage.q7) }}
+
+        {{ form_label(formSondage.q8, "Par quels moyens vous informez vous sur l’évolution du covid-19 ?") }}
+        {{ form_widget(formSondage.q8) }}
+
+        {{ form_label(formSondage.q9, "Avez-vous des membres de votre famille contaminé ?") }}
+        {{ form_widget(formSondage.q9) }}
+
+        {{ form_label(formSondage.q10, "Avez-vous des enfants ?") }}
+        {{ form_widget(formSondage.q10) }}
+
+        {{ form_label(formSondage.q11, "Avez-vous peur du covid-19 ?") }}
+        {{ form_widget(formSondage.q11) }}
+
+        {{ form_label(formSondage.q12, "Etes-vous plus rassuré après les discours du Président et du Premier ministre ?") }}
+        {{ form_widget(formSondage.q12) }}
+
+    {{ form_end(formSondage) }}
 {% endblock %}
