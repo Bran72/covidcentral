@@ -27,4 +27,26 @@ class DefaultController extends AbstractController
             'user' => $user
         ]);
     }
+
+    /**
+     * @Route("/sondage", name="sondage")
+     */
+    public function sondage()
+    {
+        $user = $this->getUser();
+        return $this->render('default/sondage.html.twig', [
+            'user' => $user
+        ]);
+    }
+
+    /**
+     * @Route("/informations", name="informations")
+     */
+    public function informations()
+    {
+        $user = $this->getUser();
+        return $this->render('default/informations.html.twig', [
+            'user' => $user
+        ]);
+    }
 }
