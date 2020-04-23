@@ -25,9 +25,11 @@ class SondageController extends AbstractController
 
         $form -> handleRequest($request);
 
-        if($form -> isSubmitted() && $form -> isValid()){
+        if($form -> isSubmitted() && $form -> isValid()) {
             $entityManager -> persist($question);
             $entityManager -> flush();
+
+            return $this->redirectToRoute('home');
         }
 
         return $this->render('sondage/index.html.twig', [

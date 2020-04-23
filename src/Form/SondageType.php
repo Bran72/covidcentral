@@ -34,7 +34,7 @@ class SondageType extends AbstractType
             ])
             ->add('q3', NumberType::class, [
                 'html5'=>true,
-                'attr' => ['placeholder' => 'Entrer un chiffre']
+                'attr' => ['placeholder' => 'Entrez un chiffre']
             ])
             ->add('q4', ChoiceType::class, [
                 'placeholder' => 'Choisi une option',
@@ -90,6 +90,7 @@ class SondageType extends AbstractType
             ])
             ->add('q10', NumberType::class, [
                 'html5'=>true,
+                'attr' => ['placeholder' => 'Entrez un chiffre']
             ])
             ->add('q12', ChoiceType::class, [
                 'placeholder' => 'Choisi une option',
