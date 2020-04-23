@@ -1,6 +1,6 @@
 {
 "version": 3,
-"mappings": "AAAA;;GAEG",
+"mappings": "AAAA;;GAEG;AAEH,CAAE;EAAE,WAAW,EAAE,MAAM",
 "sources": ["depistage.scss"],
 "names": [],
 "file": "depistage.css"

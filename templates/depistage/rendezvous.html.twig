@@ -1,0 +1,53 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} | Prise de rendez-vous{% endblock %}
+
+{% block stylesheets %}
+    {{ encore_entry_link_tags('rendezvous') }}
+{% endblock stylesheets %}
+
+{% block body %}
+    <div class="section_rdv">
+        <div class="info_left-side">
+            <div>
+                <p class="result-depistage">X %</p>
+            </div>
+            <div class="info_img_container">
+                <div class="card_section_bulle">
+                    <img class="card_section_img" src="/img/home/bulle_depistage.png" alt="Dépistage">
+                    <span>
+                        <p>Il se peut que vous soyez atteint par le COVID-19. Vous devriez prendre rapidement rendez-vous.</p>
+                    </span>
+                </div>
+                <img id="picto_informations" src="{{ asset('img/depistage/rdv/picto_rdv.svg') }}" alt="Informations">
+            </div>
+        </div>
+        <div class="info_right-size">
+            <h2>Prise de rendez-vous</h2>
+
+            <div class="good-tips">
+                <p>
+                    <input type="text" class="form-control" placeholder="First name">
+                    <img src="{{ asset('img/informations/tick.png') }}" alt="Good Tips">
+                    Mangez 5 fruits & légumes par jour
+                </p>
+                <p>
+                    <img src="{{ asset('img/informations/tick.png') }}" alt="Good Tips">
+                    Lavez-vous régulièrement les mains
+                </p>
+                <p>
+                    <img src="{{ asset('img/informations/tick.png') }}" alt="Good Tips">
+                    Limitez les déplacements
+                </p>
+                <p>
+                    <img src="{{ asset('img/informations/tick.png') }}" alt="Good Tips">
+                    Si possible, équipez vous d’un masque
+                </p>
+                <p>
+                    <img src="{{ asset('img/informations/tick.png') }}" alt="Good Tips">
+                    Toussez dans votre coude
+                </p>
+            </div>
+        </div>
+    </div>
+{% endblock %}

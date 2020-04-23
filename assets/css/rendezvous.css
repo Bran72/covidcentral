@@ -1,0 +1,131 @@
+/*
+  Here your custom style for the page 'rendezvous'
+ */
+nav {
+  display: flex;
+  background: #25A69A !important; }
+  nav > div:first-child {
+    display: none; }
+  nav > div:nth-child(0n+2) {
+    flex-basis: 40%;
+    justify-content: center; }
+  nav > div:last-child {
+    flex-basis: 60%;
+    margin-top: -2rem; }
+
+.section_rdv {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 2rem;
+  min-height: 40rem; }
+  .section_rdv .info_left-side {
+    display: flex;
+    flex-basis: 40%;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    text-align: center; }
+    .section_rdv .info_left-side .result-depistage {
+      color: #25A69A;
+      font-size: 4rem;
+      padding: 1rem 2rem;
+      border-radius: 15px; }
+      .section_rdv .info_left-side .result-depistage:hover {
+        text-decoration: none; }
+    .section_rdv .info_left-side .info_img_container {
+      width: 100%;
+      padding: 2rem; }
+      .section_rdv .info_left-side .info_img_container .card_section_bulle {
+        position: relative; }
+        .section_rdv .info_left-side .info_img_container .card_section_bulle span {
+          position: absolute;
+          top: 0;
+          left: 0;
+          display: flex;
+          align-items: center;
+          height: calc(100% - 2rem);
+          margin: 0 6rem;
+          text-align: left; }
+          .section_rdv .info_left-side .info_img_container .card_section_bulle span p {
+            color: white; }
+      .section_rdv .info_left-side .info_img_container > img {
+        width: 40%;
+        margin: 2rem 0 0 -5rem; }
+  .section_rdv .info_right-size {
+    flex-basis: 60%;
+    max-width: 720px;
+    background: #fff;
+    margin-top: -5rem;
+    margin-right: 3rem;
+    padding: 2rem;
+    border-radius: 15px;
+    -webkit-box-shadow: 2px 0px 30px -24px rgba(0, 0, 0, 0.5);
+    -moz-box-shadow: 2px 0px 30px -24px rgba(0, 0, 0, 0.5);
+    box-shadow: 2px 0px 30px -24px rgba(0, 0, 0, 0.5); }
+    .section_rdv .info_right-size h2 {
+      text-align: center; }
+    .section_rdv .info_right-size .good-tips {
+      margin: 4rem 15%;
+      height: calc(100% - 10rem);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between; }
+      .section_rdv .info_right-size .good-tips p {
+        margin: 1rem 0;
+        font-size: 1.25rem; }
+      .section_rdv .info_right-size .good-tips img {
+        margin-right: 1rem; }
+
+@media screen and (max-width: 1200px) {
+  .section_rdv .info_left-side .info_img_container img {
+    width: 100%; }
+  .section_rdv .info_right-size {
+    margin-right: 0; }
+    .section_rdv .info_right-size .good-tips {
+      margin: 2rem 2%; } }
+@media screen and (max-width: 1000px) {
+  nav > div:last-child {
+    margin-top: 0; }
+
+  .section_rdv {
+    flex-direction: column; }
+    .section_rdv .info_left-side .info_img_container {
+      margin-top: 2rem; }
+      .section_rdv .info_left-side .info_img_container img {
+        width: 22rem; }
+    .section_rdv .info_right-size {
+      max-width: 45rem;
+      margin-left: auto;
+      margin-right: auto; }
+      .section_rdv .info_right-size .good-tips {
+        margin: 4rem 2rem 0; } }
+@media screen and (max-width: 750px) {
+  nav > div:last-child {
+    margin-top: 0; }
+
+  .section_rdv {
+    flex-direction: column; }
+    .section_rdv .info_left-side .info_img_container {
+      margin-top: 2rem; }
+      .section_rdv .info_left-side .info_img_container img {
+        width: 60%; }
+    .section_rdv .info_right-size .good-tips {
+      margin: 4rem 0 0; } }
+@media screen and (max-width: 550px) {
+  .section_rdv {
+    margin: 2rem 1rem 1rem; }
+    .section_rdv .info_right-size {
+      padding: 2rem 1rem;
+      margin-top: -4rem; }
+      .section_rdv .info_right-size .good-tips {
+        margin-top: 2rem; }
+        .section_rdv .info_right-size .good-tips p {
+          font-size: 1rem; }
+        .section_rdv .info_right-size .good-tips img {
+          width: 30px;
+          margin-right: 10px; }
+      .section_rdv .info_right-size h2 {
+        font-size: 1.75rem; } }
+
+/*# sourceMappingURL=rendezvous.css.map */
