@@ -120,6 +120,9 @@ div[class^="card_section_"] {
         h1 {
             display: none;
         }
+        > div:first-child {
+            display: none;
+        }
         > div:nth-child(0n+2) {
             justify-content: flex-start !important;
         }

@@ -2,7 +2,8 @@
   Here your custom style for the page 'informations'
  */
 
-nav { display: flex; background: #039BE5 !important;
+nav {
+  display: flex; background: #039BE5 !important;
   > div {
     &:first-child {
       display: none;
