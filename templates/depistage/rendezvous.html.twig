@@ -10,7 +10,7 @@
     <div class="section_rdv">
         <div class="info_left-side">
             <div>
-                <p class="result-depistage">X %</p>
+                <p class="result-depistage">{{ points }} %</p>
             </div>
             <div class="info_img_container">
                 <div class="card_section_bulle">
@@ -26,6 +26,7 @@
             <h2>Prise de rendez-vous</h2>
 
             <div class="good-tips">
+                {{ form(rdvForm) }}
                 <p>
                     <input type="text" class="form-control" placeholder="First name">
                     <img src="{{ asset('img/informations/tick.png') }}" alt="Good Tips">

@@ -49,15 +49,4 @@ class DefaultController extends AbstractController
             'user' => $user
         ]);
     }
-
-    /**
-     * @Route("/depistage/rdv", name="rendezvous")
-     */
-    public function rendezVous()
-    {
-        $user = $this->getUser();
-        return $this->render('depistage/rendezvous.html.twig', [
-            'user' => $user
-        ]);
-    }
 }

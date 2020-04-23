@@ -50,10 +50,12 @@ nav {
           position: absolute;
           top: 0;
           left: 0;
+          right: 0;
           display: flex;
           align-items: center;
+          max-width: 18rem;
           height: calc(100% - 2rem);
-          margin: 0 6rem;
+          margin: auto;
           text-align: left;
           p {color: white}
         }
