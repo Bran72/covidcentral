@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block stylesheets %}
+    {{ encore_entry_link_tags('depistage') }}
+{% endblock stylesheets %}
+
+{% block title %}Dépistage COVID-19{% endblock %}
+
+{% block body %}
+    <h1>Prise de rendez-vous... {{ points  }} %</h1>
+{% endblock %}
