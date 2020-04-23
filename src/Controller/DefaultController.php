@@ -49,4 +49,12 @@ class DefaultController extends AbstractController
             'user' => $user
         ]);
     }
+
+    /**
+     * @Route("/live", name="liveAPI")
+     */
+    public function liveAPI()
+    {
+        return $this->render('default/liveAPI.html.twig');
+    }
 }
