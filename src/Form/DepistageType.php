@@ -17,7 +17,7 @@ class DepistageType extends AbstractType
     {
         $builder
             ->add('q1', RangeType::class, [
-                'attr'=>[
+                'attr' => [
                     'min' => 0,
                     'max' => 10
                 ]

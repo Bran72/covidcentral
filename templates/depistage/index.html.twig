@@ -1,5 +1,9 @@
 {% extends 'base.html.twig' %}
 
+{% block stylesheets %}
+    {{ encore_entry_link_tags('depistage') }}
+{% endblock stylesheets %}
+
 {% block title %}Dépistage COVID-19{% endblock %}
 
 {% block body %}
@@ -13,6 +17,7 @@
     }
 </style>
     {{ form_start(formDepistage, {'attr': {"class":"form"}}) }}
+
         {{ form_label(formDepistage.q1, "Depuis combien de jours possédez vous des symptômes ?") }}
         {{ form_widget(formDepistage.q1) }}
 
