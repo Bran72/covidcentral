@@ -7,7 +7,21 @@
 {% endblock stylesheets %}
 
 {% block body %}
-    <div>
-        LIVE API
+    <div class="content">
+        <h1>Evolution du COVID-19 en france</h1>
+        <div class="datas-container">
+            <div class="single-data confirmed">
+                <div>{{  datas.Confirmed }}</div>
+                <h2>Nombre total de cas confirmés</h2>
+            </div>
+            <div class="single-data deaths">
+                <div>{{  datas.Deaths }}</div>
+                <h2>Nombre total de morts</h2>
+            </div>
+            <div class="single-data recovered">
+                <div>{{  datas.Recovered }}</div>
+                <h2>Nombre total de cas soignés</h2>
+            </div>
+        </div>
     </div>
 {% endblock %}

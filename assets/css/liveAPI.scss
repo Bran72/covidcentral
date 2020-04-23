@@ -1,3 +1,37 @@
 /*
   Here your custom style for the page 'liveAPI'
  */
+.content {
+  margin: 2em 5em 0 5em;
+  h1 {
+    font-size: 24px;
+  }
+  .datas-container {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 2em;
+
+    .single-data {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      div {
+        font-size: 64px;
+      }
+      h2 {
+        font-size: 18px;
+      }
+    }
+
+    .confirmed > div {
+      color: rgba(3, 155, 229, 0.9);
+    }
+    .deaths > div {
+      color: rgba(186, 169, 222, 0.8);
+    }
+    .recovered > div {
+      color: rgba(37, 166, 154, .9);
+    }
+  }
+}

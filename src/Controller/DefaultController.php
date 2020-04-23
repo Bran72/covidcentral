@@ -4,6 +4,7 @@ namespace App\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\HttpClient\HttpClient;
 
 class DefaultController extends AbstractController
 {
@@ -55,6 +56,11 @@ class DefaultController extends AbstractController
      */
     public function liveAPI()
     {
-        return $this->render('default/liveAPI.html.twig');
+        $client = HttpClient::create();
+        $response = $client->request('GET', 'https://api.covid19api.com/total/country/france')->toArray();
+
+        return $this->render('default/liveAPI.html.twig', [
+            'datas' => end($response)
+        ]);
     }
 }
