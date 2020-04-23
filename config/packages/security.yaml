@@ -36,5 +36,6 @@ security:
     access_control:
         - { path: ^/admin, roles: ROLE_ADMIN }
         - { path: ^/feedback, roles: ROLE_ADMIN } # Réponses au(x) sondage(s)
+        - { path: ^/depistage, roles: ROLE_USER }
         - { path: ^/medical$, roles: ROLE_USER }
         - { path: ^/profile, roles: ROLE_USER }
