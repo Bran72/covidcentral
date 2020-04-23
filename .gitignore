@@ -65,6 +65,8 @@
 # Embedded web-server pid file
 /.web-server-pid
 
+# PHP version
+.php-version
 ###> symfony/webpack-encore-bundle ###
 /node_modules/
 /public/build/
