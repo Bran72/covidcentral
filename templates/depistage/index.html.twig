@@ -10,8 +10,8 @@
     {% form_theme formDepistage 'bootstrap_4_layout.html.twig' %}
     <div class ="title-container">
         <div class="title-logo">
-            <svg width="60" height="68" viewBox="0 0 60 68" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M58.5529 53.5898L42.8563 28.5547V8.5H43.9277C45.709 8.5 47.1421 7.07891 47.1421 5.3125V3.1875C47.1421 1.42109 45.709 0 43.9277 0H16.0703C14.2891 0 12.856 1.42109 12.856 3.1875V5.3125C12.856 7.07891 14.2891 8.5 16.0703 8.5H17.1418V28.5547L1.44519 53.5898C-2.47896 59.8453 2.04787 68 9.49437 68H50.5037C57.9636 68 62.477 59.832 58.5529 53.5898ZM18.4677 42.5L24.9231 32.1937C25.4186 31.5031 25.6999 30.6531 25.6999 29.75V8.5H34.2714V29.75C34.2714 30.6664 34.566 31.5031 35.0482 32.1937L41.5036 42.5H18.4677Z" fill="#BAA9DE"/>
+            <svg width="66" height="66" viewBox="0 0 66 66" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M57.634 14.4381C53.2254 14.5025 49.6031 18.099 49.5129 22.5076C49.4484 25.64 51.1242 28.3857 53.6379 29.8295V44.3443C53.6379 51.7306 47.1668 57.7506 39.2004 57.7506C31.466 57.7506 25.1238 52.0658 24.7758 44.9631C34.1602 43.0295 41.25 34.7021 41.25 24.7506V4.71855C41.25 3.24902 40.2059 1.97284 38.7621 1.68925L30.6539 0.0650322C28.9781 -0.270124 27.3539 0.812688 27.0188 2.48847L26.6062 4.5123C26.2711 6.18808 27.3539 7.8123 29.0297 8.14745L32.9871 8.93378V24.583C32.9871 31.4021 27.5473 37.0482 20.7281 37.1127C13.8445 37.1771 8.23711 31.6084 8.23711 24.7377V8.94667L12.1945 8.16034C13.8703 7.82519 14.9531 6.20097 14.618 4.52519L14.2184 2.50136C13.8832 0.825579 12.259 -0.257233 10.5832 0.0779228L2.48789 1.67636C1.04414 1.97284 0 3.23613 0 4.71855V24.7506C0 34.715 7.10274 43.0553 16.5129 44.9631C16.848 56.6162 26.8898 66.0006 39.1875 66.0006C51.6914 66.0006 61.875 56.281 61.875 44.3443V29.8295C64.3371 28.3986 66 25.7432 66 22.6881C66 18.0861 62.2359 14.3736 57.634 14.4381ZM57.75 24.7506C56.6156 24.7506 55.6875 23.8225 55.6875 22.6881C55.6875 21.5537 56.6156 20.6256 57.75 20.6256C58.8844 20.6256 59.8125 21.5537 59.8125 22.6881C59.8125 23.8225 58.8844 24.7506 57.75 24.7506Z" fill="#25A69A"/>
             </svg>
         </div>
         <div class="title-wrapper">
@@ -22,36 +22,36 @@
     <div class="form-container">
         {{ form_start(formDepistage, {'attr': {"class":"form"}}) }}
         <div class="answer-container">
-            {{ form_label(formDepistage.q1, "Depuis combien de jours possédez vous des symptômes ?") }}
+            {{ form_label(formDepistage.q1, "Depuis combien de jours possédez vous des symptômes ? (entre 0 et 10 jours)") }}
             {{ form_widget(formDepistage.q1) }}
         </div>
         <div class="answer-container">
             {{ form_label(formDepistage.q2, "Avez vous de la toux ?") }}
-            {{ form_widget(formDepistage.q2) }}
+            {{ form_widget(formDepistage.q2, {'attr': {"class":"radio-btn-group"}}) }}
         </div>
         <div class="answer-container">
             {{ form_label(formDepistage.q3, "Avez vous de la fièvre ?") }}
-            {{ form_widget(formDepistage.q3) }}
+            {{ form_widget(formDepistage.q3, {'attr': {"class":"radio-btn-group"}}) }}
         </div>
         <div class="answer-container">
             {{ form_label(formDepistage.q4, "Si oui, indiquez la température") }}
-            {{ form_widget(formDepistage.q4) }}
+            {{ form_widget(formDepistage.q4, {'attr': {"class":"radio-btn-group"}}) }}
         </div>
         <div class="answer-container">
             {{ form_label(formDepistage.q5, "Avez vous été en contact avec une personne à risque ?") }}
-            {{ form_widget(formDepistage.q5) }}
+            {{ form_widget(formDepistage.q5, {'attr': {"class":"radio-btn-group"}}) }}
         </div>
         <div class="answer-container">
             {{ form_label(formDepistage.q6, "Avez vous du mal à respirer ?") }}
-            {{ form_widget(formDepistage.q6) }}
+            {{ form_widget(formDepistage.q6, {'attr': {"class":"radio-btn-group"}}) }}
         </div>
         <div class="answer-container">
             {{ form_label(formDepistage.q7, "Si possible, indiquez votre rythme cardiaque") }}
-            {{ form_widget(formDepistage.q7) }}
+            {{ form_widget(formDepistage.q7, {'attr': {"class":"radio-btn-group"}}) }}
         </div>
         <div class="answer-container">
             {{ form_label(formDepistage.q8, "Avez-vous été vacciné contre la grippe ?") }}
-            {{ form_widget(formDepistage.q8) }}
+            {{ form_widget(formDepistage.q8, {'attr': {"class":"radio-btn-group"}}) }}
         </div>
         <div class="btn-submit">
             {{ form_widget(formDepistage.send) }}
