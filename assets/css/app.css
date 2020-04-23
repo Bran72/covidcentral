@@ -7778,6 +7778,9 @@ html, body {
   padding: 0;
   font-family: 'Quicksand', sans-serif; }
 
+body {
+  background: #F5F5F5; }
+
 nav {
   display: flex;
   padding: 1.5rem 2rem;
@@ -7892,5 +7895,13 @@ div[class^="card_section_"] {
     transition: margin-right .25s ease-in-out; }
   div[class^="card_section_"]:hover .card_section_content > img {
     margin-right: 0; }
+
+@media screen and (max-width: 650px) {
+  nav h1 {
+    display: none; }
+  nav > div:first-child {
+    display: none; }
+  nav > div:nth-child(0n+2) {
+    justify-content: flex-start !important; } }
 
 /*# sourceMappingURL=app.css.map */

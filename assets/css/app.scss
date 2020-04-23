@@ -2,6 +2,8 @@
 
 html, body { margin: 0; padding: 0; font-family: 'Quicksand', sans-serif;}
 
+body {background: #F5F5F5}
+
 nav { display: flex; padding: 1.5rem 2rem; justify-content: space-between; background: #4E4E4E; color: #fff }
 nav h1 { margin: 0 0 0 1rem; font-size: 2.5rem; color: white; text-transform: uppercase; font-weight: lighter }
 nav a, nav a:hover { color: #fff; text-decoration: none }
@@ -110,5 +112,19 @@ div[class^="card_section_"] {
     }
     &:hover .card_section_content > img {
         margin-right: 0;
+    }
+}
+
+@media screen and (max-width: 650px) {
+    nav {
+        h1 {
+            display: none;
+        }
+        > div:first-child {
+            display: none;
+        }
+        > div:nth-child(0n+2) {
+            justify-content: flex-start !important;
+        }
     }
 }
