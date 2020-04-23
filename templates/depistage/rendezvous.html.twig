@@ -16,7 +16,11 @@
                 <div class="card_section_bulle">
                     <img class="card_section_img" src="/img/home/bulle_depistage.png" alt="Dépistage">
                     <span>
-                        <p>Il se peut que vous soyez atteint par le COVID-19. Vous devriez prendre rapidement rendez-vous.</p>
+                        {% if points >= 50 %}
+                            <p>Il se peut que vous soyez atteint par le COVID-19. Vous devriez prendre rapidement rendez-vous.</p>
+                        {% else %}
+                            <p>Il est peu probable que vous ayez le COVID-19. Vous pouvez tout de même prendre rendez-vous.</p>
+                        {% endif %}
                     </span>
                 </div>
                 <img id="picto_informations" src="{{ asset('img/depistage/rdv/picto_rdv.svg') }}" alt="Informations">
@@ -25,29 +29,40 @@
         <div class="info_right-size">
             <h2>Prise de rendez-vous</h2>
 
-            <div class="good-tips">
-                {{ form(rdvForm) }}
-                <p>
-                    <input type="text" class="form-control" placeholder="First name">
-                    <img src="{{ asset('img/informations/tick.png') }}" alt="Good Tips">
-                    Mangez 5 fruits & légumes par jour
-                </p>
-                <p>
-                    <img src="{{ asset('img/informations/tick.png') }}" alt="Good Tips">
-                    Lavez-vous régulièrement les mains
-                </p>
-                <p>
-                    <img src="{{ asset('img/informations/tick.png') }}" alt="Good Tips">
-                    Limitez les déplacements
-                </p>
-                <p>
-                    <img src="{{ asset('img/informations/tick.png') }}" alt="Good Tips">
-                    Si possible, équipez vous d’un masque
-                </p>
-                <p>
-                    <img src="{{ asset('img/informations/tick.png') }}" alt="Good Tips">
-                    Toussez dans votre coude
-                </p>
+            <div class="rdvForm">
+                {{ form_start(rdvForm) }}
+                   <div class="form-rdv">
+                       <div class="rdv-form-part rdv-form_left">
+                           <div class="rdv-form_field">
+                               {{ form_label(rdvForm.firstname, "Prénom *") }}
+                               {{ form_widget(rdvForm.firstname) }}
+                           </div>
+                           <div class="rdv-form_field">
+                               {{ form_label(rdvForm.city, "Ville *") }}
+                               {{ form_widget(rdvForm.city) }}
+                           </div>
+                       </div>
+                       <div class="rdv-form-part rdv-form_right">
+                           <div class="rdv-form_field">
+                               {{ form_label(rdvForm.lastname, "Nom * ") }}
+                               {{ form_widget(rdvForm.lastname) }}
+                           </div>
+                           <div class="rdv-form_field">
+                               {{ form_label(rdvForm.tel, "N° téléphone") }}
+                               {{ form_widget(rdvForm.tel) }}
+                           </div>
+                       </div>
+                       <div class="rdv-form_field rdv-form_field_date">
+                           {{ form_label(rdvForm.date, "Date de rendez-vous *") }}
+                           {{ form_widget(rdvForm.date) }}
+                       </div>
+                   </div>
+                    <div class="rdv-form_field_submit">
+                        <div class="btn-submit">
+                            {{ form_widget(rdvForm.send) }}
+                        </div>
+                    </div>
+                {{ form_end(rdvForm) }}
             </div>
         </div>
     </div>

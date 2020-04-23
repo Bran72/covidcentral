@@ -1,6 +1,10 @@
 /*
   Here your custom style for the page 'depistage'
  */
+nav {
+  display: flex;
+  background: #25A69A !important; }
+
 .title-container {
   width: 80%;
   margin: 80px auto;

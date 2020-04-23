@@ -4,6 +4,7 @@ namespace App\Controller;
 
 use App\Entity\User;
 use App\Form\RdvFormType;
+use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -20,23 +21,21 @@ class DepistageController extends AbstractController
      */
     public function makeDepistage(Request $request)
     {
+        $points = 0;
 
         $question = new QuestionDepistage();
 
         $form = $this->createForm(DepistageType::class, $question);
+        $form->handleRequest($request);
 
-        $form -> handleRequest($request);
-
-        $points = 0;
         if ($form->isSubmitted() && $form->isValid()) {
             $entityManager = $this->getDoctrine()->getManager();
             $user = $this->getUser();
 
             $question->setUser($user);
-            $entityManager -> persist($question);
-            $entityManager -> flush();
+            $entityManager->persist($question);
+            $entityManager->flush();
 
-            // var_dump($form->get('q1')->getData());
             $points += intval($form->get('q1')->getData())*3;
             $points += intval($form->get('q2')->getData())*10;
             $points += intval($form->get('q3')->getData())*10;
@@ -48,15 +47,25 @@ class DepistageController extends AbstractController
                 $points += 10;
             $points += intval($form->get('q8')->getData())*10;
 
+            $this->setUserDepistage($user, $points);
 
-            return $this->render('depistage/rendezvous.html.twig', [
-                'points' => $points
-            ]);
+            return $this->redirectToRoute('rendezvous');
         }
 
         return $this->render('depistage/index.html.twig', [
             'formDepistage' => $form->createView()
         ]);
+    }
+
+    public function setUserDepistage(User $user, $data_depistage)
+    {
+        $em = $this->getDoctrine()->getManager();
+
+        $user->setPointsDepistage($data_depistage);
+        $em->persist($user);
+        $em->flush();
+
+        return true;
     }
 
     /**
@@ -66,7 +75,8 @@ class DepistageController extends AbstractController
      */
     public function rendezVous(Request $request)
     {
-        $user = new User();
+        $userConnected = $this->getUser();
+        $user = $this->getUser();
 
         $form = $this->createForm(RdvFormType::class, $user);
 
@@ -74,14 +84,15 @@ class DepistageController extends AbstractController
 
         if ($form->isSubmitted() && $form->isValid()) {
             $em = $this->getDoctrine()->getManager();
-
+            $em->persist($user);
+            $em->flush();
         }
 
         $user = $this->getUser();
         return $this->render('depistage/rendezvous.html.twig', [
             'rdvForm' => $form->createView(),
             'user' => $user,
-            'points' => 0
+            'points' => $userConnected->getPointsDepistage()
         ]);
     }
 }
