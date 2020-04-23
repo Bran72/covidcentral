@@ -1,45 +1,62 @@
 {% extends 'base.html.twig' %}
 
+{% block title %}Dépistage COVID-19{% endblock %}
+
 {% block stylesheets %}
     {{ encore_entry_link_tags('depistage') }}
 {% endblock stylesheets %}
 
-{% block title %}Dépistage COVID-19{% endblock %}
-
 {% block body %}
-<style>
-    .form {
-        display: flex;
-        flex-direction: column;
-    }
-    .form label {
-        margin-top: 20px;
-    }
-</style>
-    {{ form_start(formDepistage, {'attr': {"class":"form"}}) }}
+    {% form_theme formDepistage 'bootstrap_4_layout.html.twig' %}
+    <div class ="title-container">
+        <div class="title-logo">
+            <svg width="60" height="68" viewBox="0 0 60 68" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M58.5529 53.5898L42.8563 28.5547V8.5H43.9277C45.709 8.5 47.1421 7.07891 47.1421 5.3125V3.1875C47.1421 1.42109 45.709 0 43.9277 0H16.0703C14.2891 0 12.856 1.42109 12.856 3.1875V5.3125C12.856 7.07891 14.2891 8.5 16.0703 8.5H17.1418V28.5547L1.44519 53.5898C-2.47896 59.8453 2.04787 68 9.49437 68H50.5037C57.9636 68 62.477 59.832 58.5529 53.5898ZM18.4677 42.5L24.9231 32.1937C25.4186 31.5031 25.6999 30.6531 25.6999 29.75V8.5H34.2714V29.75C34.2714 30.6664 34.566 31.5031 35.0482 32.1937L41.5036 42.5H18.4677Z" fill="#BAA9DE"/>
+            </svg>
+        </div>
+        <div class="title-wrapper">
+            <div class="title">Vous pensez être atteint ?</div>
+            <div class="subtitle">Répondez à ce questionnaire, vous pouvez ensuite prendre rendez-vous avec le médecin le plus proche.</div>
+        </div>
+    </div>
+    <div class="form-container">
+        {{ form_start(formDepistage, {'attr': {"class":"form"}}) }}
+        <div class="answer-container">
+            {{ form_label(formDepistage.q1, "Depuis combien de jours possédez vous des symptômes ?") }}
+            {{ form_widget(formDepistage.q1) }}
+        </div>
+        <div class="answer-container">
+            {{ form_label(formDepistage.q2, "Avez vous de la toux ?") }}
+            {{ form_widget(formDepistage.q2) }}
+        </div>
+        <div class="answer-container">
+            {{ form_label(formDepistage.q3, "Avez vous de la fièvre ?") }}
+            {{ form_widget(formDepistage.q3) }}
+        </div>
+        <div class="answer-container">
+            {{ form_label(formDepistage.q4, "Si oui, indiquez la température") }}
+            {{ form_widget(formDepistage.q4) }}
+        </div>
+        <div class="answer-container">
+            {{ form_label(formDepistage.q5, "Avez vous été en contact avec une personne à risque ?") }}
+            {{ form_widget(formDepistage.q5) }}
+        </div>
+        <div class="answer-container">
+            {{ form_label(formDepistage.q6, "Avez vous du mal à respirer ?") }}
+            {{ form_widget(formDepistage.q6) }}
+        </div>
+        <div class="answer-container">
+            {{ form_label(formDepistage.q7, "Si possible, indiquez votre rythme cardiaque") }}
+            {{ form_widget(formDepistage.q7) }}
+        </div>
+        <div class="answer-container">
+            {{ form_label(formDepistage.q8, "Avez-vous été vacciné contre la grippe ?") }}
+            {{ form_widget(formDepistage.q8) }}
+        </div>
+        <div class="btn-submit">
+            {{ form_widget(formDepistage.send) }}
+        </div>
 
-        {{ form_label(formDepistage.q1, "Depuis combien de jours possédez vous des symptômes ?") }}
-        {{ form_widget(formDepistage.q1) }}
-
-        {{ form_label(formDepistage.q2, "Avez vous de la toux ?") }}
-        {{ form_widget(formDepistage.q2) }}
-
-        {{ form_label(formDepistage.q3, "Avez vous de la fièvre ?") }}
-        {{ form_widget(formDepistage.q3) }}
-
-        {{ form_label(formDepistage.q4, "Si oui, indiquez la température") }}
-        {{ form_widget(formDepistage.q4) }}
-
-        {{ form_label(formDepistage.q5, "Avez vous été en contact avec une personne à risque ?") }}
-        {{ form_widget(formDepistage.q5) }}
-
-        {{ form_label(formDepistage.q6, "Avez vous du mal à respirer ?") }}
-        {{ form_widget(formDepistage.q6) }}
-
-        {{ form_label(formDepistage.q7, "Si possible, indiquez votre rythme cardiaque") }}
-        {{ form_widget(formDepistage.q7) }}
-
-        {{ form_label(formDepistage.q8, "Avez-vous été vacciné contre la grippe ?") }}
-        {{ form_widget(formDepistage.q8) }}
-    {{ form_end(formDepistage) }}
+        {{ form_end(formDepistage) }}
+    </div>
 {% endblock %}
