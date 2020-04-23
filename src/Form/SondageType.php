@@ -58,6 +58,8 @@ class SondageType extends AbstractType
                     'Oui' => true,
                     'Non' => false,
                 ],
+                'multiple'=>false,
+                'expanded'=>true,
             ])
             ->add('q7', ChoiceType::class, [
                 'placeholder' => 'Choisi une option',
@@ -65,6 +67,8 @@ class SondageType extends AbstractType
                     'Oui' => true,
                     'Non' => false,
                 ],
+                'multiple'=>false,
+                'expanded'=>true,
             ])
             ->add('q8', ChoiceType::class, [
                 'placeholder' => 'Choisi une option',
@@ -81,9 +85,11 @@ class SondageType extends AbstractType
                     'Oui' => true,
                     'Non' => false,
                 ],
+                'multiple'=>false,
+                'expanded'=>true,
             ])
             ->add('q10', NumberType::class, [
-                'html5'=>true 
+                'html5'=>true,
             ])
             ->add('q12', ChoiceType::class, [
                 'placeholder' => 'Choisi une option',
@@ -91,6 +97,8 @@ class SondageType extends AbstractType
                     'Oui' => true,
                     'Non' => false,
                 ],
+                'multiple'=>false,
+                'expanded'=>true,
             ])
             ->add('q11', ChoiceType::class, [
                 'placeholder' => 'Choisi une option',
@@ -98,8 +106,12 @@ class SondageType extends AbstractType
                     'Oui' => true,
                     'Non' => false,
                 ],
+                'multiple'=>false,
+                'expanded'=>true,
             ])
-            ->add('send', SubmitType::class)
+            ->add('send', SubmitType::class, [
+                'label' => 'Envoyer'
+            ])
         ;
     }
 

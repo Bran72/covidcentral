@@ -1,78 +1,93 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Sondage Covid-19!{% endblock %}
+{% block title %} | Sondage Covid-19!{% endblock %}
+
+{% block stylesheets %}
+    {{ encore_entry_link_tags('sondage') }}
+{% endblock stylesheets %}
 
 {% block body %}
 
-    <style>
-        .form {
-            width: 50%;
-            margin: 0 auto;
-        }
-
-        .form label, legend {
-            margin-top: 15px;
-            font-size: 24px !important;
-            font-weight: 600;
-        }
-
-        .radio-btn-group {
-            display: flex;
-        }
-
-        .radio-btn-group .form-check {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .radio-btn-group .form-check label {
-            margin-top: 6px;
-            margin-left: 40px;
-        }
-    </style>
-
     {% form_theme formSondage 'bootstrap_4_layout.html.twig' %}
 
-    {{ form_start(formSondage, {'attr': {"class":"form"}}) }}
+    <div class ="title-container">
+        <div class="title-logo">
+            <svg width="60" height="68" viewBox="0 0 60 68" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M58.5529 53.5898L42.8563 28.5547V8.5H43.9277C45.709 8.5 47.1421 7.07891 47.1421 5.3125V3.1875C47.1421 1.42109 45.709 0 43.9277 0H16.0703C14.2891 0 12.856 1.42109 12.856 3.1875V5.3125C12.856 7.07891 14.2891 8.5 16.0703 8.5H17.1418V28.5547L1.44519 53.5898C-2.47896 59.8453 2.04787 68 9.49437 68H50.5037C57.9636 68 62.477 59.832 58.5529 53.5898ZM18.4677 42.5L24.9231 32.1937C25.4186 31.5031 25.6999 30.6531 25.6999 29.75V8.5H34.2714V29.75C34.2714 30.6664 34.566 31.5031 35.0482 32.1937L41.5036 42.5H18.4677Z" fill="#BAA9DE"/>
+            </svg>
+        </div>
+        <div class="title-wrapper">
+            <div class="title">Aidez les scientifiques à comprendre...</div>
+            <div class="subtitle">En répondant à ce sondage, vous aiderez les scientifiques à mieux comprendre le virus.</div>
+        </div>
+    </div>
 
-        {{ form_label(formSondage.q1, "Êtes-vous en télétravail ?") }}
-        {{ form_widget(formSondage.q1, {'attr': {"class":"radio-btn-group"}}) }}
+    <div class="form-container">
+        {{ form_start(formSondage, {'attr': {"class":"form"}}) }}
 
-        {{ form_label(formSondage.q2, "Êtes-vous au chômage ou chômage partiel ?") }}
-        {{ form_widget(formSondage.q2) }}
+            <div class="answer-container">
+                {{ form_label(formSondage.q1, "Êtes-vous en télétravail ?") }}
+                {{ form_widget(formSondage.q1, {'attr': {"class":"radio-btn-group"}}) }}
+            </div>
 
-        {{ form_label(formSondage.q3, "Combien de fois sortez-vous par jour ?") }}
-        {{ form_widget(formSondage.q3) }}
+            <div class="answer-container">
+                {{ form_label(formSondage.q2, "Êtes-vous au chômage ou chômage partiel ?") }}
+                {{ form_widget(formSondage.q2) }}
+            </div>
 
-        {{ form_label(formSondage.q4, "Pourquoi sortez-vous le plus souvent ?") }}
-        {{ form_widget(formSondage.q4) }}
+            <div class="answer-container">
+                {{ form_label(formSondage.q3, "Combien de fois sortez-vous par jour ?") }}
+                {{ form_widget(formSondage.q3) }}
+            </div>
+            
+            <div class="answer-container">
+                {{ form_label(formSondage.q4, "Pourquoi sortez-vous le plus souvent ?") }}
+                {{ form_widget(formSondage.q4) }}
+            </div>
 
-        {{ form_label(formSondage.q5, "Combien de fois faites vous les courses par semaine ?") }}
-        {{ form_widget(formSondage.q5) }}
+            <div class="answer-container">
+                {{ form_label(formSondage.q5, "Combien de fois faites vous les courses par semaine ?") }}
+                {{ form_widget(formSondage.q5) }}
+            </div>
 
-        {{ form_label(formSondage.q6, "Lavez vous  vos mains après chaque sortie ?") }}
-        {{ form_widget(formSondage.q6) }}
+            <div class="answer-container">
+                {{ form_label(formSondage.q6, "Lavez vous  vos mains après chaque sortie ?") }}
+                {{ form_widget(formSondage.q6, {'attr': {"class":"radio-btn-group"}}) }}
+            </div>
 
-        {{ form_label(formSondage.q7, "Avez vous des gants ou des masques ?") }}
-        {{ form_widget(formSondage.q7) }}
+            <div class="answer-container">
+                {{ form_label(formSondage.q7, "Avez vous des gants ou des masques ?") }}
+                {{ form_widget(formSondage.q7, {'attr': {"class":"radio-btn-group"}}) }}
+            </div>
 
-        {{ form_label(formSondage.q8, "Par quels moyens vous informez vous sur l’évolution du covid-19 ?") }}
-        {{ form_widget(formSondage.q8) }}
+            <div class="answer-container">
+                {{ form_label(formSondage.q8, "Par quels moyens vous informez vous sur l’évolution du covid-19 ?") }}
+                {{ form_widget(formSondage.q8) }}
+            </div>
 
-        {{ form_label(formSondage.q9, "Avez-vous des membres de votre famille contaminé ?") }}
-        {{ form_widget(formSondage.q9) }}
+            <div class="answer-container">
+                {{ form_label(formSondage.q9, "Avez-vous des membres de votre famille contaminé ?") }}
+                {{ form_widget(formSondage.q9, {'attr': {"class":"radio-btn-group"}}) }}
+            </div>
 
-        {{ form_label(formSondage.q10, "Avez-vous des enfants ?") }}
-        {{ form_widget(formSondage.q10) }}
+            <div class="answer-container">
+                {{ form_label(formSondage.q10, "Avez-vous des enfants ?") }}
+                {{ form_widget(formSondage.q10, {attr: {"placeholder":"Rentrez un nombre"}}) }}
+            </div>
 
-        {{ form_label(formSondage.q11, "Avez-vous peur du covid-19 ?") }}
-        {{ form_widget(formSondage.q11) }}
+            <div class="answer-container">
+                {{ form_label(formSondage.q11, "Avez-vous peur du covid-19 ?") }}
+                {{ form_widget(formSondage.q11, {'attr': {"class":"radio-btn-group"}}) }}
+            </div>
 
-        {{ form_label(formSondage.q12, "Etes-vous plus rassuré après les discours du Président et du Premier ministre ?") }}
-        {{ form_widget(formSondage.q12) }}
+            <div class="answer-container">
+                {{ form_label(formSondage.q12, "Etes-vous plus rassuré après les discours du Président et du Premier ministre ?") }}
+                {{ form_widget(formSondage.q12, {'attr': {"class":"radio-btn-group"}}) }}
+            </div>
 
-        {{ form_widget(formSondage.send) }}
-
-    {{ form_end(formSondage) }}
+            <div class="btn-submit">
+                {{ form_widget(formSondage.send) }}
+            </div>
+        {{ form_end(formSondage) }}
+    </div>
 {% endblock %}
