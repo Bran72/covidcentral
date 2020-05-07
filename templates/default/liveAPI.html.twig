@@ -1,0 +1,187 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} | Live API{% endblock %}
+
+{% block stylesheets %}
+    {{ encore_entry_link_tags('liveAPI') }}
+{% endblock stylesheets %}
+
+{% block body %}
+    <div class="content">
+        <div class="chartContainer">
+            <div class="chart">
+                <canvas id="myChart"></canvas>
+            </div>
+            <div class="chart">
+                <canvas id="myChart2"></canvas>
+            </div>
+            <div class="chart">
+                <canvas id="myChart3"></canvas>
+            </div>
+        </div>
+        <div class="datas-container">
+            <div class="single-data confirmed">
+                <div>{{  datas.Confirmed }}</div>
+                <h2>Nombre total de cas confirmés</h2>
+            </div>
+            <div class="single-data deaths">
+                <div>{{  datas.Deaths }}</div>
+                <h2>Nombre total de morts</h2>
+            </div>
+            <div class="single-data recovered">
+                <div>{{  datas.Recovered }}</div>
+                <h2>Nombre total de cas soignés</h2>
+            </div>
+        </div>
+    </div>
+    <div class="bigChartContainer">
+        <div class="chart">
+            <canvas id="myChart4"></canvas>
+            <h2>Nombre de nouveaux cas confirmés par jour</h2>
+        </div>
+    </div>
+{% endblock %}
+{% block javascripts %}
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
+    <script type="module">
+
+        const options = {
+            legend: {
+                display: false
+            },
+            tooltips: {
+                intersect: false,
+                backgroundColor: '#fff',
+                titleFontFamily: 'Roboto',
+                titleFontColor: '#7e8a96',
+                titleMarginBottom: 4,
+                bodyFontFamily: 'Roboto',
+                bodyFontColor: '#050f19',
+                bodyFontStyle: 'medium',
+                displayColors: false,
+                xPadding: 15,
+                yPadding: 15
+            },
+            scales: {
+                xAxes: [
+                    {
+                        display: false,
+                        gridLines: {
+                            display: false,
+                            lineWidth: 0.5,
+                            color: '#e3e5e9'
+                        },
+                        scaleLabel: {
+                            display: true,
+                            labelString: ''
+                        },
+                        // type: 'time',
+                        ticks: {
+                            autoSkip: true,
+                            maxTicksLimit: 10,
+                            maxRotation: 0
+                        }
+                    }
+                ],
+                yAxes: [
+                    {
+                        display: false,
+                        gridLines: {
+                            display: false,
+                            lineWidth: 0.5,
+                            color: '#e3e5e9'
+                        },
+                        scaleLabel: {
+                            display: true,
+                            labelString: ''
+                        },
+                        ticks: {
+                            autoSkip: true
+                        }
+                    }
+                ]
+            }
+        };
+
+        var ctx = document.getElementById('myChart').getContext('2d');
+        var myChart = new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: {{ labelData|json_encode|raw }},
+                datasets: [{
+                    label: '',
+                    data: {{ arr1|json_encode|raw  }},
+                    backgroundColor: [
+                        'rgba(3, 155, 229, 0.4)'
+                    ],
+                    borderColor: [
+                        'rgba(3, 155, 229, 0.9)'
+                    ],
+                    borderWidth: 1
+                }]
+            },
+            options: options
+        });
+
+        var ctx2 = document.getElementById('myChart2').getContext('2d');
+        var myChart = new Chart(ctx2, {
+            type: 'line',
+            data: {
+                labels: {{ labelData|json_encode|raw }},
+                datasets: [{
+                    label: '',
+                    data: {{ arr2|json_encode|raw  }},
+                    backgroundColor: [
+                        'rgba(186, 169, 222, 0.4)'
+                    ],
+                    borderColor: [
+                        'rgba(186, 169, 222, 0.9)'
+                    ],
+                    borderWidth: 1
+                }]
+            },
+            options: options
+        });
+
+        var ctx3 = document.getElementById('myChart3').getContext('2d');
+        var myChart = new Chart(ctx3, {
+            type: 'line',
+            data: {
+                labels: {{ labelData|json_encode|raw }},
+                datasets: [{
+                    label: '',
+                    data: {{ arr3|json_encode|raw  }},
+                    backgroundColor: [
+                        'rgba(37, 166, 154, .4)'
+                    ],
+                    borderColor: [
+                        'rgba(37, 166, 154, .9)'
+                    ],
+                    borderWidth: 1
+                }]
+            },
+            options: options
+        });
+
+        var ctx4 = document.getElementById('myChart4').getContext('2d');
+        var myChart = new Chart(ctx4, {
+            type: 'line',
+            data: {
+                labels: {{ labelDataPerDay|json_encode|raw }},
+                datasets: [{
+                    label: '',
+                    data: {{ casePerDay|json_encode|raw  }},
+                    backgroundColor: [
+                        'rgba(78, 78, 78, 0.4)'
+                    ],
+                    borderColor: [
+                        'rgba(78, 78, 78, 0.9)'
+                    ],
+                    borderWidth: 1
+                }]
+            },
+            options: options
+        });
+
+    </script>
+{% endblock %}

@@ -29,6 +29,7 @@ Encore
     .addEntry('rendezvous', './assets/js/rendezvous.js')
     .addEntry('informations', './assets/js/informations.js')
     .addEntry('sondage', './assets/js/sondage.js')
+    .addEntry('liveAPI', './assets/js/liveAPI.js')
 
     // When enabled, Webpack "splits" your files into smaller pieces for greater optimization.
     .splitEntryChunks()
