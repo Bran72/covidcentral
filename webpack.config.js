@@ -26,6 +26,7 @@ Encore
      */
     .addEntry('app', './assets/js/app.js')
     .addEntry('depistage', './assets/js/depistage.js')
+    .addEntry('rendezvous', './assets/js/rendezvous.js')
     .addEntry('informations', './assets/js/informations.js')
     .addEntry('sondage', './assets/js/sondage.js')
 

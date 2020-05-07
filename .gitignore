@@ -73,4 +73,5 @@
 npm-debug.log
 yarn-error.log
 /.sass-cache
+/.yarn
 ###< symfony/webpack-encore-bundle ###
