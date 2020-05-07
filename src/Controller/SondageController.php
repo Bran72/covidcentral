@@ -29,11 +29,18 @@ class SondageController extends AbstractController
             $entityManager -> persist($question);
             $entityManager -> flush();
 
-            return $this->redirectToRoute('home');
-        }
+            $data = $this->getDoctrine()
+                         ->getRepository(QuestionSondage::class)
+                         ->getBestResponse();
 
+            return $this->render('sondage/sondageResult.html.twig', [
+                'data' => $data["0"]
+            ]);
+        }
         return $this->render('sondage/index.html.twig', [
             'formSondage' => $form->createView()
         ]);
     }
+
+    
 }

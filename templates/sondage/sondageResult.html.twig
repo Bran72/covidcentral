@@ -1,0 +1,16 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} | Sondage Covid-19!{% endblock %}
+
+{% block stylesheets %}
+    {{ encore_entry_link_tags('sondage') }}
+{% endblock stylesheets %}
+
+{% block body %}
+
+    <h1>Resultats</hi>
+    <div class="answer">
+        <p>{{data["q2"]}</p>
+    </div>
+
+{% endblock %}
