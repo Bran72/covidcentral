@@ -1,0 +1,41 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} | Prise de rendez-vous{% endblock %}
+
+{% block stylesheets %}
+    {{ encore_entry_link_tags('rendezvous') }}
+{% endblock stylesheets %}
+
+{% block body %}
+    <div class="section_rdv">
+        <div class="info_left-side">
+            <div>
+                <p class="result-depistage">{{ points }} %</p>
+            </div>
+            <div class="info_img_container">
+                <div class="card_section_bulle">
+                    <img class="card_section_img" src="/img/home/bulle_depistage.png" alt="Dépistage">
+                    <span>
+                        {% if points >= 50 %}
+                            <p>Il se peut que vous soyez atteint par le COVID-19. Vous devriez prendre rapidement rendez-vous.</p>
+                        {% else %}
+                            <p>Il est peu probable que vous ayez le COVID-19. Vous pouvez tout de même prendre rendez-vous.</p>
+                        {% endif %}
+                    </span>
+                </div>
+                <img id="picto_informations" src="{{ asset('img/depistage/rdv/picto_rdv.svg') }}" alt="Informations">
+            </div>
+        </div>
+        <div class="info_right-size">
+            <h2>Prise de rendez-vous</h2>
+
+            <div class="rdvForm">
+                {% if user.rdvsubmitted is null or user.rdvsubmitted == 0 %}
+                    {% include 'depistage/form/form.html.twig' with {'rdvForm': rdvForm} %}
+                {% else %}
+                    {% include 'depistage/form/confirmation.html.twig' %}
+                {% endif %}
+            </div>
+        </div>
+    </div>
+{% endblock %}

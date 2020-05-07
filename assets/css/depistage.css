@@ -1,5 +1,83 @@
 /*
   Here your custom style for the page 'depistage'
  */
+nav {
+  display: flex;
+  background: #25A69A !important; }
+
+.title-container {
+  width: 80%;
+  margin: 80px auto;
+  display: flex;
+  justify-content: center;
+  align-items: baseline; }
+  .title-container .title-logo {
+    margin-right: 30px; }
+  .title-container .title-wrapper .title {
+    font-size: 48px;
+    font-weight: bold;
+    line-height: 60px;
+    color: #25A69A; }
+  .title-container .title-wrapper .subtitle {
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 22px; }
+
+.form {
+  width: 60%;
+  margin: 0 auto; }
+  .form .answer-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 25px 0; }
+    @media screen and (max-width: 1024px) {
+      .form .answer-container {
+        flex-direction: column;
+        align-items: flex-start; } }
+  .form label, .form legend {
+    margin-top: 15px;
+    font-size: 24px !important;
+    font-weight: 600; }
+  .form select, .form input {
+    width: 230px;
+    border-color: #25A69A;
+    border-radius: 0; }
+    @media screen and (max-width: 1024px) {
+      .form select, .form input {
+        width: 100%; } }
+  .form .radio-btn-group {
+    display: flex;
+    width: 305px;
+    justify-content: space-between; }
+  .form .radio-btn-group .form-check {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-left: 0; }
+    .form .radio-btn-group .form-check input {
+      width: initial; }
+  .form .radio-btn-group .form-check label {
+    margin-top: 6px;
+    margin-left: 40px; }
+  .form .btn-submit {
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    border-top: 1px solid #000;
+    padding-top: 30px;
+    margin-bottom: 100px; }
+    .form .btn-submit button {
+      width: 180px;
+      height: 50px;
+      background-color: #25A69A;
+      border-color: #25A69A;
+      border-radius: 19px;
+      color: #fff;
+      font-size: 24px;
+      font-weight: 500; }
+      .form .btn-submit button:hover {
+        background-color: #1e897f; }
 
 /*# sourceMappingURL=depistage.css.map */
