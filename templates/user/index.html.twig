@@ -3,24 +3,69 @@
 {% block title %} | Profil de {{ user.username }}{% endblock %}
 
 {% block stylesheets %}
-    <style>
-        nav { display: flex; background: #4E4E4E !important; }
-    </style>
+<style>
+    nav { display: flex; background: #4E4E4E !important; }
+
+    .example-wrapper { margin: 1em auto; max-width: 1200px; width: 95%; font: 18px/1.5 sans-serif; }
+    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
+    h1{text-align: center}
+    .profil_suggestions{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        margin-top: 5rem;
+    }
+    .profil_part_card {
+        position: relative;
+        flex-basis: 30%;
+        max-width: 400px;
+        border-radius: 15px;
+        color: white;
+    }
+    .card-text {
+        font-size: 13px;
+        margin-top: 2rem;
+    }
+    .go_btn_hidden {
+        display: block;
+        opacity: 0;
+        height: 0;
+    }
+</style>
 {% endblock %}
 
 {% block body %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
-
 <div class="example-wrapper">
     <h1>Hello {{ user.username }} ! 😘</h1>
 
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code><a href="{{ '/Applications/MAMP/htdocs/ECV/PHP/covidcentral/src/Controller/UserController.php'|file_link(0) }}">src/Controller/UserController.php</a></code></li>
-        <li>Your template at <code><a href="{{ '/Applications/MAMP/htdocs/ECV/PHP/covidcentral/templates/user/index.html.twig'|file_link(0) }}">templates/user/index.html.twig</a></code></li>
-    </ul>
+    <div class="profil_suggestions">
+        <div class="profil_part_card" style="background:linear-gradient(135deg, #0FF0B3 0%,#036ED9 100%)">
+            <div class="card-body">
+                <h5 class="card-title">Suivi en temps réel</h5>
+                <h6 class="card-subtitle mb-2 text-muted">Données et graphiques</h6>
+                <p class="card-text">Grâce aux chiffres communiqués constamment, il vous est possible de suivre en
+                temps réel (et de façon graphique !) l'état et l'évolution du Covid-19.</p>
+                <a href="#" class="stretched-link go_btn_hidden">&nbsp;</a>
+            </div>
+        </div>
+        <div class="profil_part_card" style="background:linear-gradient(135deg, #c3ec52 0%,#0ba29d 100%);">
+            <div class="card-body">
+                <h5 class="card-title">Rendez-vous</h5>
+                <h6 class="card-subtitle mb-2 text-muted">Demande en ligne</h6>
+                <p class="card-text">Vous pensez être à risque ? Vous avez des symptômes ou alors êtes simplement inquiet ?
+                Ayez des réponses en répondant à quelques simples questions.</p>
+                <a href="{{ path('rendezvous') }}" class="stretched-link go_btn_hidden">&nbsp;</a>
+            </div>
+        </div>
+        <div class="profil_part_card" style="background:linear-gradient(135deg, #CE9FFC 0%,#7367F0 100%);">
+            <div class="card-body">
+                <h5 class="card-title">Aider</h5>
+                <h6 class="card-subtitle mb-2 text-muted">Participer au sondage</h6>
+                <p class="card-text">Pour aider à la recherche, il serait suuuuper que nous puissiez occuper 3 minutes de votre
+                temps afin que vous répondiez à un petit questionnaire.</p>
+                <a href="#" class="stretched-link go_btn_hidden">&nbsp;</a>
+            </div>
+        </div>
+    </div>
 </div>
 {% endblock %}
