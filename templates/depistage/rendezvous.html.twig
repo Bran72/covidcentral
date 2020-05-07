@@ -30,39 +30,11 @@
             <h2>Prise de rendez-vous</h2>
 
             <div class="rdvForm">
-                {{ form_start(rdvForm) }}
-                   <div class="form-rdv">
-                       <div class="rdv-form-part rdv-form_left">
-                           <div class="rdv-form_field">
-                               {{ form_label(rdvForm.firstname, "Prénom *") }}
-                               {{ form_widget(rdvForm.firstname) }}
-                           </div>
-                           <div class="rdv-form_field">
-                               {{ form_label(rdvForm.city, "Ville *") }}
-                               {{ form_widget(rdvForm.city) }}
-                           </div>
-                       </div>
-                       <div class="rdv-form-part rdv-form_right">
-                           <div class="rdv-form_field">
-                               {{ form_label(rdvForm.lastname, "Nom * ") }}
-                               {{ form_widget(rdvForm.lastname) }}
-                           </div>
-                           <div class="rdv-form_field">
-                               {{ form_label(rdvForm.tel, "N° téléphone") }}
-                               {{ form_widget(rdvForm.tel) }}
-                           </div>
-                       </div>
-                       <div class="rdv-form_field rdv-form_field_date">
-                           {{ form_label(rdvForm.date, "Date de rendez-vous *") }}
-                           {{ form_widget(rdvForm.date) }}
-                       </div>
-                   </div>
-                    <div class="rdv-form_field_submit">
-                        <div class="btn-submit">
-                            {{ form_widget(rdvForm.send) }}
-                        </div>
-                    </div>
-                {{ form_end(rdvForm) }}
+                {% if user.rdvsubmitted is null or user.rdvsubmitted == 0 %}
+                    {% include 'depistage/form/form.html.twig' with {'rdvForm': rdvForm} %}
+                {% else %}
+                    {% include 'depistage/form/confirmation.html.twig' %}
+                {% endif %}
             </div>
         </div>
     </div>

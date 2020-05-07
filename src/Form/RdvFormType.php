@@ -29,7 +29,7 @@ class RdvFormType extends AbstractType
                 'mapped' => false
             ])
             ->add('send', SubmitType::class, [
-                'label' => 'Envoyer'
+                'label' => 'Demander un rendez-vous'
             ])
         ;
     }

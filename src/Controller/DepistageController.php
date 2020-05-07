@@ -83,12 +83,16 @@ class DepistageController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+            // TODO: envoyer un mail
             $em = $this->getDoctrine()->getManager();
+            $user->setRdvSubmitted(1);
             $em->persist($user);
             $em->flush();
+
+            // redirectToRoute pour éviter le renvoit du form au refresh
+            return $this->redirectToRoute('rendezvous');
         }
 
-        $user = $this->getUser();
         return $this->render('depistage/rendezvous.html.twig', [
             'rdvForm' => $form->createView(),
             'user' => $user,

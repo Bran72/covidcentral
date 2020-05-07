@@ -69,6 +69,7 @@ nav {
   .info_right-size {
     flex-basis: 60%;
     max-width: 720px;
+    max-height: 800px;
     background: #fff;
     margin-top: -5rem;
     margin-right: 3rem;
@@ -119,6 +120,19 @@ nav {
         text-align: center;
       }
     }
+  }
+}
+
+.confirmation {
+  text-align: center;
+  .mailing {
+    margin-bottom: 2rem;
+    #picto_mailing {
+      max-width: 125px;
+    }
+  }
+  h3 {
+    margin-bottom: 1rem;
   }
 }
 

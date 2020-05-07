@@ -57,6 +57,7 @@ nav {
   .section_rdv .info_right-size {
     flex-basis: 60%;
     max-width: 720px;
+    max-height: 800px;
     background: #fff;
     margin-top: -5rem;
     margin-right: 3rem;
@@ -97,6 +98,15 @@ nav {
             justify-content: center; }
       .section_rdv .info_right-size .rdvForm .rdv-form_field_submit {
         text-align: center; }
+
+.confirmation {
+  text-align: center; }
+  .confirmation .mailing {
+    margin-bottom: 2rem; }
+    .confirmation .mailing #picto_mailing {
+      max-width: 125px; }
+  .confirmation h3 {
+    margin-bottom: 1rem; }
 
 @media screen and (max-width: 1200px) {
   .section_rdv .info_left-side .info_img_container img {

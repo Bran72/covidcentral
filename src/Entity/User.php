@@ -65,6 +65,11 @@ class User implements UserInterface
      */
     private $city;
 
+    /**
+     * @ORM\Column(type="boolean", nullable=true)
+     */
+    private $rdv_submitted;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -206,6 +211,18 @@ class User implements UserInterface
     public function setCity(?string $city): self
     {
         $this->city = $city;
+
+        return $this;
+    }
+
+    public function getRdvSubmitted(): ?bool
+    {
+        return $this->rdv_submitted;
+    }
+
+    public function setRdvSubmitted(?bool $rdv_submitted): self
+    {
+        $this->rdv_submitted = $rdv_submitted;
 
         return $this;
     }
