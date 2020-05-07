@@ -21,6 +21,11 @@ class DepistageController extends AbstractController
      */
     public function makeDepistage(Request $request)
     {
+        $user = $this->getUser();
+        if(($user->getPointsDepistage() != null) || ($user->getRdvSubmitted() == 1)) {
+            return $this->redirectToRoute('rendezvous');
+        }
+
         $points = 0;
 
         $question = new QuestionDepistage();
