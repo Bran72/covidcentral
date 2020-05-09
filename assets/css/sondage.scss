@@ -106,5 +106,22 @@ select, input {
     }
   }
 }
+}
 
+.answer-wrapper {
+  width: 45%;
+  margin: auto;
+  .answer-container {
+    display: flex;
+    align-items: baseline;
+    margin: 60px 0;
+    font-size: 25px;
+
+    .answer-percentage {
+      margin-right: 90px;
+      font-size: 40px;
+      font-weight: 600;
+      color: #BAA9DE;
+    }
+  }
 }

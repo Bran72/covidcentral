@@ -52,7 +52,8 @@ class QuestionSondageRepository extends ServiceEntityRepository
     {
         $conn = $this->getEntityManager()->getConnection();
         $sql = '
-                SELECT
+                SELECT 
+                      COUNT(*) AS total,
                       (SELECT q1 FROM question_sondage GROUP BY `q1` ORDER BY COUNT(*) DESC LIMIT 1) AS q1,
                       (SELECT count(q1) FROM question_sondage GROUP BY `q1` ORDER BY COUNT(*) DESC LIMIT 1) AS q1Count,
 
