@@ -11,13 +11,12 @@ use Symfony\Component\Form\Extension\Core\Type\NumberType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\Extension\Core\Type\RadioType;
 
-
 class SondageType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('q1', ChoiceType::class,[
+            ->add('q1', ChoiceType::class, [
                 'choices' =>  [
                     'Oui' => true,
                     'Non' => false,],
