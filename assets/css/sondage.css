@@ -1,0 +1,97 @@
+/*
+  Here your custom style for the page 'sondage'
+ */
+nav {
+  display: flex;
+  background: #BAA9DE !important; }
+
+.title-container {
+  width: 80%;
+  margin: 80px auto;
+  display: flex;
+  justify-content: center;
+  align-items: baseline; }
+  .title-container .title-logo {
+    margin-right: 30px; }
+  .title-container .title-wrapper .title {
+    font-size: 48px;
+    font-weight: bold;
+    line-height: 60px;
+    color: #BAA9DE; }
+  .title-container .title-wrapper .subtitle {
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 22px; }
+
+.form {
+  width: 60%;
+  margin: 0 auto; }
+  .form .form-control-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 25px 0; }
+    @media screen and (max-width: 1024px) {
+      .form .form-control-container {
+        flex-direction: column;
+        align-items: flex-start; } }
+  .form label, .form legend {
+    margin-top: 15px;
+    font-size: 24px !important;
+    font-weight: 600; }
+  .form select, .form input {
+    width: 230px;
+    border-color: #BAA9DE;
+    border-radius: 0; }
+    @media screen and (max-width: 1024px) {
+      .form select, .form input {
+        width: 100%; } }
+  .form .radio-btn-group {
+    display: flex;
+    width: 305px;
+    justify-content: space-between; }
+  .form .radio-btn-group .form-check {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-left: 0; }
+    .form .radio-btn-group .form-check input {
+      width: initial; }
+  .form .radio-btn-group .form-check label {
+    margin-top: 6px;
+    margin-left: 40px; }
+  .form .btn-submit {
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    border-top: 1px solid #000;
+    padding-top: 30px;
+    margin-bottom: 100px; }
+    .form .btn-submit button {
+      width: 180px;
+      height: 50px;
+      background-color: #BAA9DE;
+      border-color: #BAA9DE;
+      border-radius: 19px;
+      color: #fff;
+      font-size: 24px;
+      font-weight: 500; }
+      .form .btn-submit button:hover {
+        background-color: #a58fd4; }
+
+.answer-wrapper {
+  width: 45%;
+  margin: auto; }
+  .answer-wrapper .answer-container {
+    display: flex;
+    align-items: baseline;
+    margin: 60px 0;
+    font-size: 25px; }
+    .answer-wrapper .answer-container .answer-percentage {
+      margin-right: 90px;
+      font-size: 40px;
+      font-weight: 600;
+      color: #BAA9DE; }
+
+/*# sourceMappingURL=sondage.css.map */

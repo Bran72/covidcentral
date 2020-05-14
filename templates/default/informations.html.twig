@@ -1,0 +1,46 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} | Informations pratiques{% endblock %}
+
+{% block stylesheets %}
+    {{ encore_entry_link_tags('informations') }}
+{% endblock stylesheets %}
+
+{% block body %}
+    <div class="section_info">
+        <div class="info_left-side">
+            <div>
+                <a href="https://www.interieur.gouv.fr/attestation_de_deplacement_derogatoire">Télécharger l'attestation</a>
+            </div>
+            <div class="info_img_container">
+                <img id="picto_informations" src="{{ asset('img/informations/picto_info.svg') }}" alt="Informations">
+            </div>
+        </div>
+        <div class="info_right-size">
+            <h2>Quelques bonnes pratiques à adopter</h2>
+
+            <div class="good-tips">
+                <p>
+                    <img src="{{ asset('img/informations/tick.png') }}" alt="Good Tips">
+                    Mangez 5 fruits & légumes par jour
+                </p>
+                <p>
+                    <img src="{{ asset('img/informations/tick.png') }}" alt="Good Tips">
+                    Lavez-vous régulièrement les mains
+                </p>
+                <p>
+                    <img src="{{ asset('img/informations/tick.png') }}" alt="Good Tips">
+                    Limitez les déplacements
+                </p>
+                <p>
+                    <img src="{{ asset('img/informations/tick.png') }}" alt="Good Tips">
+                    Si possible, équipez vous d’un masque
+                </p>
+                <p>
+                    <img src="{{ asset('img/informations/tick.png') }}" alt="Good Tips">
+                    Toussez dans votre coude
+                </p>
+            </div>
+        </div>
+    </div>
+{% endblock %}

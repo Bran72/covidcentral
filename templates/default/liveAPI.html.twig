@@ -1,0 +1,192 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} | Live API{% endblock %}
+
+{% block stylesheets %}
+    {{ encore_entry_link_tags('liveAPI') }}
+{% endblock stylesheets %}
+
+{% block body %}
+    <div class="content">
+        <h1>
+            <svg width="22" height="22" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M13.5625 10.5H1.75V2.1875C1.75 1.94578 1.55422 1.75 1.3125 1.75H0.4375C0.195781 1.75 0 1.94578 0 2.1875V11.375C0 11.8582 0.391836 12.25 0.875 12.25H13.5625C13.8042 12.25 14 12.0542 14 11.8125V10.9375C14 10.6958 13.8042 10.5 13.5625 10.5ZM12.6875 2.625H9.4593C8.87469 2.625 8.58184 3.33184 8.99527 3.74527L9.88121 4.63121L7.875 6.6377L5.86879 4.63148C5.52699 4.28969 4.97301 4.28969 4.63148 4.63148L2.75324 6.50973C2.58234 6.68062 2.58234 6.95762 2.75324 7.12852L3.37176 7.74703C3.54266 7.91793 3.81965 7.91793 3.99055 7.74703L5.25 6.4873L7.25621 8.49352C7.59801 8.83531 8.15199 8.83531 8.49352 8.49352L11.1185 5.86852L12.0045 6.75445C12.4179 7.16789 13.1247 6.87504 13.1247 6.29043V3.0625C13.125 2.82078 12.9292 2.625 12.6875 2.625Z" fill="black"/>
+            </svg>
+            Evolution en direct du covid-19
+        </h1>
+        <div class="blocks">
+            <div class="block confirmed">
+                <div class="chart">
+                    <canvas id="myChart"></canvas>
+                </div>
+                <h2>{{  datas.Confirmed }}</h2>
+                <p>Nombre total de cas confirmés</p>
+            </div>
+            <div class="block deaths">
+                <div class="chart">
+                    <canvas id="myChart2"></canvas>
+                </div>
+                <h2>{{  datas.Deaths }}</h2>
+                <p>Nombre total de morts</p>
+            </div>
+            <div class="block recovered">
+                <div class="chart">
+                    <canvas id="myChart3"></canvas>
+                </div>
+                <h2>{{  datas.Recovered }}</h2>
+                <p>Nombre total de cas soignés</p>
+            </div>
+        </div>
+        <div class="bigBlock">
+            <div class="chart">
+                <canvas id="myChart4"></canvas>
+            </div>
+            <h2>Nombre de nouveaux cas confirmés par jour</h2>
+
+        </div>
+    </div>
+{% endblock %}
+{% block javascripts %}
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
+    <script type="module">
+
+        const options = {
+            legend: {
+                display: false
+            },
+            tooltips: {
+                intersect: false,
+                backgroundColor: '#fff',
+                titleFontFamily: 'Roboto',
+                titleFontColor: '#7e8a96',
+                titleMarginBottom: 4,
+                bodyFontFamily: 'Roboto',
+                bodyFontColor: '#050f19',
+                bodyFontStyle: 'medium',
+                displayColors: false,
+                xPadding: 15,
+                yPadding: 15
+            },
+            scales: {
+                xAxes: [
+                    {
+                        display: false,
+                        gridLines: {
+                            display: false,
+                            lineWidth: 0.5,
+                            color: '#e3e5e9'
+                        },
+                        scaleLabel: {
+                            display: true,
+                            labelString: ''
+                        },
+                        // type: 'time',
+                        ticks: {
+                            autoSkip: true,
+                            maxTicksLimit: 10,
+                            maxRotation: 0
+                        }
+                    }
+                ],
+                yAxes: [
+                    {
+                        display: false,
+                        gridLines: {
+                            display: false,
+                            lineWidth: 0.5,
+                            color: '#e3e5e9'
+                        },
+                        scaleLabel: {
+                            display: true,
+                            labelString: ''
+                        },
+                        ticks: {
+                            autoSkip: true
+                        }
+                    }
+                ]
+            }
+        };
+
+        var ctx = document.getElementById('myChart').getContext('2d');
+        var myChart = new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: {{ labelData|json_encode|raw }},
+                datasets: [{
+                    label: '',
+                    data: {{ arr1|json_encode|raw  }},
+                    backgroundColor: [
+                        'rgba(3, 155, 229, 0.4)'
+                    ],
+                    borderColor: [
+                        'rgba(3, 155, 229, 0.9)'
+                    ],
+                    borderWidth: 1
+                }]
+            },
+            options: options
+        });
+
+        var ctx2 = document.getElementById('myChart2').getContext('2d');
+        var myChart = new Chart(ctx2, {
+            type: 'line',
+            data: {
+                labels: {{ labelData|json_encode|raw }},
+                datasets: [{
+                    label: '',
+                    data: {{ arr2|json_encode|raw  }},
+                    backgroundColor: [
+                        'rgba(186, 169, 222, 0.4)'
+                    ],
+                    borderColor: [
+                        'rgba(186, 169, 222, 0.9)'
+                    ],
+                    borderWidth: 1
+                }]
+            },
+            options: options
+        });
+
+        var ctx3 = document.getElementById('myChart3').getContext('2d');
+        var myChart = new Chart(ctx3, {
+            type: 'line',
+            data: {
+                labels: {{ labelData|json_encode|raw }},
+                datasets: [{
+                    label: '',
+                    data: {{ arr3|json_encode|raw  }},
+                    backgroundColor: [
+                        'rgba(37, 166, 154, .4)'
+                    ],
+                    borderColor: [
+                        'rgba(37, 166, 154, .9)'
+                    ],
+                    borderWidth: 1
+                }]
+            },
+            options: options
+        });
+
+        var ctx4 = document.getElementById('myChart4').getContext('2d');
+        var myChart = new Chart(ctx4, {
+            type: 'line',
+            data: {
+                labels: {{ labelDataPerDay|json_encode|raw }},
+                datasets: [{
+                    label: '',
+                    data: {{ casePerDay|json_encode|raw  }},
+                    backgroundColor: [
+                        'rgba(78, 78, 78, 0.4)'
+                    ],
+                    borderColor: [
+                        'rgba(78, 78, 78, 0.9)'
+                    ],
+                    borderWidth: 1
+                }]
+            },
+            options: options
+        });
+
+    </script>
+{% endblock %}

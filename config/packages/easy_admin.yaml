@@ -1,6 +1,19 @@
 easy_admin:
+    site_name: '<strong>CovidCentral - EasyAdmin</strong>'
+    user:
+        name_property_path: 'username'
     entities:
-        # List the entity class name you want to manage
-#        - App\Entity\Product
-#        - App\Entity\Category
-        - App\Entity\User
+        User:
+            class: App\Entity\User
+            disabled_actions: ['new']
+            form:
+                fields: ['email', { property: 'username', label: "Nom d'utilisateur" }, { property: 'firstname', label: "Nom" }, { property: 'lastname', label: "Prénom" }, { property: 'tel', label: "Tel" }, { property: 'city', label: "Ville" }]
+            list:
+                fields: ['email', { property: 'username', label: "Nom d'utilisateur" }, { property: 'firstname', label: "Nom" }, { property: 'lastname', label: "Prénom" }, { property: 'tel', label: "Tel" }, { property: 'city', label: "Ville" }]
+            search:
+                fields: ['email', 'username']
+    design:
+        assets:
+            css:
+                - 'bundles/easyadmin/app.scss'
+                - 'bundles/easyadmin/app.css'

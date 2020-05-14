@@ -1,0 +1,24 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} | Dépistage{% if is_granted('IS_AUTHENTICATED_FULLY') %} de {{ user.username }} {% endif %}{% endblock %}
+
+{% block stylesheets %}
+    <style>
+        nav { display: flex; background: #BAA9DE !important; }
+    </style>
+{% endblock stylesheets %}
+
+{% block body %}
+    <style>
+        .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
+        .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
+    </style>
+
+    <div class="example-wrapper">
+        <h1>Sondage</h1>
+
+        <div>
+            Content
+        </div>
+    </div>
+{% endblock %}

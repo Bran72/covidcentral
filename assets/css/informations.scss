@@ -1,0 +1,175 @@
+/*
+  Here your custom style for the page 'informations'
+ */
+
+nav {
+  display: flex; background: #039BE5 !important;
+  > div {
+    &:first-child {
+      display: none;
+    }
+    &:nth-child(0n+2) {
+      flex-basis: 40%;
+      justify-content: center;
+    }
+    &:last-child {
+      flex-basis: 60%;
+      margin-top: -2rem;
+    }
+  }
+}
+
+.section_info {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 2rem;
+
+  min-height: 40rem;
+
+  .info_left-side {
+    display: flex;
+    flex-basis: 40%;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    text-align: center;
+    a {
+      background: #039BE5;
+      color: white;
+      padding: 1rem 2rem;
+      border-radius: 15px;
+      &:hover {text-decoration: none}
+    }
+    .info_img_container {
+      width: 100%;
+      padding: 2rem;
+      img {
+        width: 80%;
+      }
+    }
+  }
+  .info_right-size {
+    flex-basis: 60%;
+    max-width: 720px;
+    background: #fff;
+    margin-top: -5rem;
+    margin-right: 3rem;
+    padding: 2rem;
+    border-radius: 15px;
+    -webkit-box-shadow: 2px 0px 30px -24px rgba(0,0,0,0.5);
+    -moz-box-shadow: 2px 0px 30px -24px rgba(0,0,0,0.5);
+    box-shadow: 2px 0px 30px -24px rgba(0,0,0,0.5);
+    h2 {
+      text-align: center;
+    }
+    .good-tips {
+      margin: 4rem 15%;
+      height: calc(100% - 10rem);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      p {
+        margin: 1rem 0;
+        font-size: 1.25rem;
+      }
+      img {
+        margin-right: 1rem;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .section_info {
+    .info_left-side .info_img_container img {
+      width: 100%;
+    }
+
+    .info_right-size {
+      margin-right: 0;
+
+      .good-tips {
+        margin: 2rem 2%;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  nav > div:last-child {
+    margin-top: 0
+  }
+
+  .section_info {
+    flex-direction: column;
+
+    .info_left-side {
+      .info_img_container {
+        margin-top: 2rem;
+
+        img {
+          width: 22rem;
+        }
+      }
+    }
+
+    .info_right-size {
+      max-width: 45rem;
+      margin-left: auto;
+      margin-right: auto;
+
+      .good-tips {
+        margin: 4rem 2rem 0;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 750px) {
+  nav > div:last-child {
+    margin-top: 0
+  }
+
+  .section_info {
+    flex-direction: column;
+
+    .info_left-side {
+      .info_img_container {
+        margin-top: 2rem;
+
+        img {
+          width: 60%;
+        }
+      }
+    }
+
+    .info_right-size .good-tips {
+      margin: 4rem 0 0;
+    }
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .section_info {
+    margin: 2rem 1rem 1rem;
+
+    .info_right-size {
+      padding: 2rem 1rem;
+      margin-top: -4rem;
+
+      .good-tips {
+        margin-top: 2rem;
+
+        p {
+          font-size: 1rem
+        }
+        img {
+          width: 30px;
+          margin-right: 10px;
+        }
+      }
+      h2 {font-size: 1.75rem}
+    }
+  }
+}

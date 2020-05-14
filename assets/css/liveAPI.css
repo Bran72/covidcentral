@@ -1,0 +1,39 @@
+/*
+  Here your custom style for the page 'liveAPI'
+ */
+.content {
+  margin: 2em 2em 0 2em; }
+  .content h1 {
+    font-size: 18px;
+    text-align: center; }
+    .content h1 svg {
+      margin-right: .4rem; }
+  .content .blocks {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap; }
+    .content .blocks .block {
+      display: flex;
+      margin: 2rem;
+      flex-direction: column;
+      align-items: center; }
+      .content .blocks .block h2 {
+        font-size: 48px;
+        margin-top: 1rem;
+        text-align: center; }
+      .content .blocks .block p {
+        font-size: 16px; }
+  .content .bigBlock h2 {
+    text-align: center;
+    font-size: 24px; }
+
+.confirmed > h2 {
+  color: rgba(3, 155, 229, 0.9); }
+
+.deaths > h2 {
+  color: rgba(186, 169, 222, 0.8); }
+
+.recovered > h2 {
+  color: rgba(37, 166, 154, 0.9); }
+
+/*# sourceMappingURL=liveAPI.css.map */
