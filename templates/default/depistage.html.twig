@@ -3,9 +3,7 @@
 {% block title %} | Dépistage{% if is_granted('IS_AUTHENTICATED_FULLY') %} de {{ user.username }} {% endif %}{% endblock %}
 
 {% block stylesheets %}
-    <style>
-        nav { display: flex; background: #25A69A !important; }
-    </style>
+    {{ encore_entry_link_tags('depistage') }}
 {% endblock stylesheets %}
 
 {% block body %}
