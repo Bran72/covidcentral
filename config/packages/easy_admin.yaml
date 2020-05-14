@@ -1,4 +1,5 @@
 easy_admin:
+    site_name: '<strong>CovidCentral - EasyAdmin</strong>'
     user:
         name_property_path: 'username'
     entities:
@@ -6,9 +7,9 @@ easy_admin:
             class: App\Entity\User
             disabled_actions: ['new']
             form:
-                fields: ['email', { property: 'username', label: "Nom d'utilisateur" }]
+                fields: ['email', { property: 'username', label: "Nom d'utilisateur" }, { property: 'firstname', label: "Nom" }, { property: 'lastname', label: "Prénom" }, { property: 'tel', label: "Tel" }, { property: 'city', label: "Ville" }]
             list:
-                fields: ['email', { property: 'username', label: "Nom d'utilisateur" }]
+                fields: ['email', { property: 'username', label: "Nom d'utilisateur" }, { property: 'firstname', label: "Nom" }, { property: 'lastname', label: "Prénom" }, { property: 'tel', label: "Tel" }, { property: 'city', label: "Ville" }]
             search:
                 fields: ['email', 'username']
     design:

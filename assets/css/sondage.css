@@ -1,6 +1,10 @@
 /*
   Here your custom style for the page 'sondage'
  */
+nav {
+  display: flex;
+  background: #BAA9DE !important; }
+
 .title-container {
   width: 80%;
   margin: 80px auto;
@@ -75,5 +79,19 @@
       font-weight: 500; }
       .form .btn-submit button:hover {
         background-color: #a58fd4; }
+
+.answer-wrapper {
+  width: 45%;
+  margin: auto; }
+  .answer-wrapper .answer-container {
+    display: flex;
+    align-items: baseline;
+    margin: 60px 0;
+    font-size: 25px; }
+    .answer-wrapper .answer-container .answer-percentage {
+      margin-right: 90px;
+      font-size: 40px;
+      font-weight: 600;
+      color: #BAA9DE; }
 
 /*# sourceMappingURL=sondage.css.map */
