@@ -1,0 +1,131 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} | Sondage Resultats Covid-19!{% endblock %}
+
+{% block stylesheets %}
+    {{ encore_entry_link_tags('sondage') }}
+{% endblock stylesheets %}
+
+{% block body %}
+
+    
+    <div class ="title-container">
+    <div class="title-logo">
+            <svg width="60" height="68" viewBox="0 0 60 68" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M58.5529 53.5898L42.8563 28.5547V8.5H43.9277C45.709 8.5 47.1421 7.07891 47.1421 5.3125V3.1875C47.1421 1.42109 45.709 0 43.9277 0H16.0703C14.2891 0 12.856 1.42109 12.856 3.1875V5.3125C12.856 7.07891 14.2891 8.5 16.0703 8.5H17.1418V28.5547L1.44519 53.5898C-2.47896 59.8453 2.04787 68 9.49437 68H50.5037C57.9636 68 62.477 59.832 58.5529 53.5898ZM18.4677 42.5L24.9231 32.1937C25.4186 31.5031 25.6999 30.6531 25.6999 29.75V8.5H34.2714V29.75C34.2714 30.6664 34.566 31.5031 35.0482 32.1937L41.5036 42.5H18.4677Z" fill="#BAA9DE"/>
+            </svg>
+        </div>
+        <div class="title-wrapper">
+            <div class="title">Les resultats du sondage</div>
+            <div class="subtitle">Les resultat sont en constant évolution mais ne sont pas des résultats finals </div>
+        </div>
+    </div>
+    <div class = 'answer-wrapper'>
+        {% for key, answer in data %}
+            {% if key == "q1" %}
+            <div class="answer-container">
+                <div class="answer-percentage">{{((data["q1Count"] / data["total"])* 100)|number_format ~ '%'}}</div>
+                <div class="answer-text">
+                    {{ (data["q1"]) == 1 ? 'sont en télétravail' : 'ne sont pas en télétravail' }}
+                </div>
+            </div>
+
+            {% elseif key == "q2" %}
+            <div class="answer-container">
+                <div class="answer-percentage">{{((data["q2Count"] / data["total"])* 100)|number_format ~ '%'}}</div>
+                <div class="answer-text">
+                    {% if answer == 'oui, au chômage partiel' %}
+                        {{ 'sont au chômage partiel' }}
+                    {% elseif answer == 'oui, au chômage technique' %}
+                        {{ 'sont au chômage technique' }}
+                    {% else %}
+                        {{ 'sont en horaire pleine'}}
+                    {% endif %}
+                </div>
+            </div>
+
+            {% elseif key == "q3" %}
+            <div class="answer-container">
+                <div class="answer-percentage">{{((data["q3Count"] / data["total"])* 100)|number_format ~ '%'}}</div>
+                <div class="answer-text">
+                    {{ 'sortent ' ~ answer ~ ' fois par jour' }}
+                </div>
+            </div>
+
+            {% elseif key == "q4" %}
+            <div class="answer-container">
+                <div class="answer-percentage">{{((data["q4Count"] / data["total"])* 100)|number_format ~ '%'}}</div>
+                <div class="answer-text">
+                    {{ 'sortent le plus souvent ' ~ answer }}
+                </div>
+            </div>
+
+            {% elseif key == "q5" %}
+            <div class="answer-container">
+                <div class="answer-percentage">{{((data["q5Count"] / data["total"])* 100)|number_format ~ '%'}}</div>
+                <div class="answer-text">
+                    {{ 'font ' ~ answer ~ ' les courses' }}
+                </div>
+            </div>
+
+            {% elseif key == "q6" %}
+            <div class="answer-container">
+                <div class="answer-percentage">{{((data["q6Count"] / data["total"])* 100)|number_format ~ '%'}}</div>
+                <div class="answer-text">
+                    {{ answer == 1 ? 'se lavent les mains après chaque sorties' : 'ne lavent pas les mains après chaque sorties' }}
+                </div>
+            </div>
+
+            {% elseif key == "q7" %}
+            <div class="answer-container">
+                <div class="answer-percentage">{{((data["q7Count"] / data["total"])* 100)|number_format ~ '%'}}</div>
+                <div class="answer-text">
+                    {{ answer == 1 ? 'ont des gants ou des masques' : "n'ont pas de gants ou des masques" }}
+                </div>
+            </div>
+
+            {% elseif key == "q8" %}
+            <div class="answer-container">
+                <div class="answer-percentage">{{((data["q8Count"] / data["total"])* 100)|number_format ~ '%'}}</div>
+                <div class="answer-text">
+                    {{ "s'informent de l'évolution du covid-19 " ~  answer}}
+                </div>
+            </div>
+
+            {% elseif key == "q9" %}
+            <div class="answer-container">
+                <div class="answer-percentage">{{((data["q9Count"] / data["total"])* 100)|number_format ~ '%'}}</div>
+                <div class="answer-text">
+                    {{ answer == 1 ? 'ont des membres de leur famille contaminé' : "n'ont pas des membres de leur famille contaminé" }}
+                </div>
+            </div>
+
+            {% elseif key == "q10" %}
+            <div class="answer-container">
+                <div class="answer-percentage">{{((data["q10Count"] / data["total"])* 100)|number_format ~ '%'}}</div>
+                <div class="answer-text">
+                    {{ "ont " ~ answer ~ (answer > 1 ? " enfants" : " enfant")}}
+                </div>
+            </div>
+
+            {% elseif key == "q11" %}
+            <div class="answer-container">
+                <div class="answer-percentage">{{((data["q11Count"] / data["total"])* 100)|number_format ~ '%'}}</div>
+                <div class="answer-text">
+                    {{ answer == 1 ? 'ont peur du covid-19' : "n'ont pas peur du covid-19" }}
+                </div>
+            </div>
+
+            {% elseif key == "q12" %}
+            <div class="answer-container">
+                <div class="answer-percentage">{{((data["q12Count"] / data["total"])* 100)|number_format ~ '%'}}</div>
+                <div class="answer-text">
+                    {{ answer == 1 ? 'sont rassuré par le discours du Président et du Premier ministre' : "ne sont pas rassuré par le discours du Président et du Premier ministre" }}
+                </div>
+            </div>
+            {% endif %}
+        {% endfor %}
+    </div>
+
+{% endblock %}
+
