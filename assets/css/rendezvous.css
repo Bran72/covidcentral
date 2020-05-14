@@ -19,6 +19,9 @@ nav {
   justify-content: space-between;
   margin: 2rem;
   min-height: 40rem; }
+  .section_rdv #datetimepicker {
+    max-width: 20rem;
+    margin: auto; }
   .section_rdv .info_left-side {
     display: flex;
     flex-basis: 40%;

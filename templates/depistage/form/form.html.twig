@@ -22,7 +22,16 @@
     </div>
     <div class="rdv-form_field rdv-form_field_date">
         {{ form_label(rdvForm.date, "Date de rendez-vous *") }}
-        {{ form_widget(rdvForm.date) }}
+    </div>
+
+
+    <div class="rdv-form_field rdv-form_field_date">
+        <div class="input-group date datetimepicker" id="datetimepicker" data-target-input="nearest">
+            {{ form_widget(rdvForm.date, { 'id':  'datetimepicker' }) }}
+            <div class="input-group-append" data-target="#datetimepicker" data-toggle="datetimepicker">
+                <div class="input-group-text"><i class="fa fa-calendar"></i></div>
+            </div>
+        </div>
     </div>
 </div>
 <div class="rdv-form_field_submit">
