@@ -45,17 +45,6 @@ class RegistrationController extends AbstractController
             // Sending mail
             $userMail = $user->getEmail();
             $username = $user->getUsername();
-            $body = "<h3>CovidCentral - Inscription</h3>
-                <br><br>
-                Bonjour ".$username ." ! <br>
-                <br><br>
-                Vous recevez ce mail suite à votre dépistage sur le site CovidCentral. <br>
-                Nom d'utilisateur: $username
-                Adresse email: $userMail
-                <br><br>
-                N'hésitez pas à découvrir le site et vous faire dépister !
-                <br><br>
-                L'équipe de CovidCentral.";
 
             $body = "<h3>Inscription au site CovidCentral</h3>
                 <br>

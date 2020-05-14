@@ -22,9 +22,9 @@ class SondageController extends AbstractController
 
         $form = $this->createForm(SondageType::class, $question);
 
-        $form -> handleRequest($request);
+        $form->handleRequest($request);
 
-        if ($form -> isSubmitted() && $form->isValid()) {
+        if ($form->isSubmitted() && $form->isValid()) {
             $entityManager->persist($question);
             $entityManager->flush();
 

@@ -79,9 +79,6 @@ class DefaultController extends AbstractController
             array_push($labelData, date('d M', strtotime($day['Date'])));
         }
 
-        // var_dump($datas);
-
-        // var_dump(json_encode($response));
         return $this->render('default/liveAPI.html.twig', [
             'casePerDay' => $casePerDay,
             'datas' => end($response),
