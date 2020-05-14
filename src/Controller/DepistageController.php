@@ -78,8 +78,14 @@ class DepistageController extends AbstractController
      * @param Request $request
      * @return Response
      */
-    public function rendezVous(Request $request)
+    public function rendezVous(Request $request, \Swift_Mailer $mailer)
     {
+        // Let's detect if user has the needed data to access this page
+        $user = $this->getUser();
+        if(($user->getPointsDepistage() == null)) {
+            return $this->redirectToRoute('depistage');
+        }
+
         $userConnected = $this->getUser();
         $user = $this->getUser();
 
@@ -88,11 +94,35 @@ class DepistageController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-            // TODO: envoyer un mail
             $em = $this->getDoctrine()->getManager();
             $user->setRdvSubmitted(1);
             $em->persist($user);
             $em->flush();
+
+            $formCity = $form->get('city')->getData();
+            $formDate = $form->get('date')->getData();
+
+            // Sending mail
+            $userMail = $user->getEmail();
+            $username = $user->getUsername();
+            $body = "<h3>CovidCentral - Dépistage et demande de rendez-vous</h3>
+                <br><br>
+                Bonjour ".$username ." ! <br>
+                <br><br>
+                Vous recevez ce mail suite à votre dépistage sur le site CovidCentral. <br>
+                Vous trouverez ci-dessous les informations concernant votre rendez-vous: <br><br>
+                Ville du rendez-vous: ".$formCity."<br>
+                Date du rendez-vous: ".date('d/m/Y à H:i', strtotime($formDate))."<br><br>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. A alias at autem consequatur dignissimos dolore expedita incidunt iste, maiores maxime necessitatibus, obcaecati perspiciatis quis quisquam quod reprehenderit, tenetur vel veritatis! <br>
+                <br>
+                L'équipe de CovidCentral.";
+
+            $message = (new \Swift_Message('Inscription - CovidCentral'))
+                ->setFrom('covidcentral@brandonleininger.fr')
+                ->setTo($userMail)
+                ->setBody($body, 'text/html');
+
+            $mailer->send($message);
 
             // redirectToRoute pour éviter le renvoit du form au refresh
             return $this->redirectToRoute('rendezvous');

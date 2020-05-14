@@ -27,6 +27,11 @@ nav {
 
   min-height: 40rem;
 
+  #datetimepicker {
+    max-width: 20rem;
+    margin: auto;
+  }
+
   .info_left-side {
     display: flex;
     flex-basis: 40%;

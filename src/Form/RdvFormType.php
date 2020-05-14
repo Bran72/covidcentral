@@ -4,8 +4,10 @@ namespace App\Form;
 
 use App\Entity\User;
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\DateTimeType;
 use Symfony\Component\Form\Extension\Core\Type\DateType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
+use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
@@ -18,14 +20,9 @@ class RdvFormType extends AbstractType
             ->add('lastname')
             ->add('tel')
             ->add('city')
-            ->add('date', DateType::class, [
+            ->add('date', TextType::class, [
                 'label' => 'Date de rendez-vous',
-                'format' => 'd-M-y',
-                'widget' => 'choice',
-                'html5' => false,
-                'placeholder' => [
-                   'day' => 'Jour', 'month' => 'Mois'
-                ],
+                'attr' => ['class' => 'datetimepicker'],
                 'mapped' => false
             ])
             ->add('send', SubmitType::class, [
