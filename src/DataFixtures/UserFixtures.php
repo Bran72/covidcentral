@@ -25,7 +25,8 @@ class UserFixtures extends Fixture
         $user->setEmail('brandon.leininger@icloud.com');
         $user->setUsername('User Fixture');
         $user->setPassword($this->passwordEncoder->encodePassword(
-            $user, 'password'
+            $user,
+            'password'
         ));
 
         $manager->flush();

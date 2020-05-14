@@ -22,7 +22,7 @@ class DepistageController extends AbstractController
     public function makeDepistage(Request $request)
     {
         $user = $this->getUser();
-        if(($user->getPointsDepistage() != null) || ($user->getRdvSubmitted() == 1)) {
+        if (($user->getPointsDepistage() != null) || ($user->getRdvSubmitted() == 1)) {
             return $this->redirectToRoute('rendezvous');
         }
 
@@ -44,12 +44,14 @@ class DepistageController extends AbstractController
             $points += intval($form->get('q1')->getData())*3;
             $points += intval($form->get('q2')->getData())*10;
             $points += intval($form->get('q3')->getData())*10;
-            if (intval($form->get('q4')->getData()) > 38)
+            if (intval($form->get('q4')->getData()) > 38) {
                 $points += 10;
+            }
             $points += intval($form->get('q5')->getData())*10;
             $points += intval($form->get('q6')->getData())*10;
-            if (intval($form->get('q4')->getData()) > 110)
+            if (intval($form->get('q4')->getData()) > 110) {
                 $points += 10;
+            }
             $points += intval($form->get('q8')->getData())*10;
 
             $this->setUserDepistage($user, $points);

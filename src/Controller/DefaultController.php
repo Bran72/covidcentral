@@ -77,7 +77,6 @@ class DefaultController extends AbstractController
             array_push($arr2, $day['Deaths']);
             array_push($arr3, $day['Recovered']);
             array_push($labelData, date('d M', strtotime($day['Date'])));
-
         }
 
         // var_dump($datas);

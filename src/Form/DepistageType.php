@@ -22,14 +22,14 @@ class DepistageType extends AbstractType
                     'max' => 10
                 ]
             ])
-            ->add('q2', ChoiceType::class,[
+            ->add('q2', ChoiceType::class, [
                 'choices' =>  [
                     'Oui' => true,
                     'Non' => false],
                 'multiple'=>false,
                 'expanded'=>true,
             ])
-            ->add('q3', ChoiceType::class,[
+            ->add('q3', ChoiceType::class, [
                 'choices' =>  [
                     'Oui' => true,
                     'Non' => false],
@@ -39,14 +39,14 @@ class DepistageType extends AbstractType
             ->add('q4', NumberType::class, [
                 'html5'=>true
             ])
-            ->add('q5', ChoiceType::class,[
+            ->add('q5', ChoiceType::class, [
                 'choices' =>  [
                     'Oui' => true,
                     'Non' => false],
                 'multiple'=>false,
                 'expanded'=>true,
             ])
-            ->add('q6', ChoiceType::class,[
+            ->add('q6', ChoiceType::class, [
                 'choices' =>  [
                     'Oui' => true,
                     'Non' => false],
@@ -56,7 +56,7 @@ class DepistageType extends AbstractType
             ->add('q7', NumberType::class, [
                 'html5'=>true
             ])
-            ->add('q8', ChoiceType::class,[
+            ->add('q8', ChoiceType::class, [
                 'choices' =>  [
                     'Oui' => true,
                     'Non' => false],

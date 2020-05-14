@@ -16,18 +16,17 @@ class SondageController extends AbstractController
      */
     public function makeSondage(Request $request)
     {
-
         $entityManager = $this->getDoctrine()->getManager();
 
-        $question = new QuestionSondage ();
+        $question = new QuestionSondage();
 
         $form = $this->createForm(SondageType::class, $question);
 
         $form -> handleRequest($request);
 
-        if($form -> isSubmitted() && $form -> isValid()) {
-            $entityManager -> persist($question);
-            $entityManager -> flush();
+        if ($form -> isSubmitted() && $form->isValid()) {
+            $entityManager->persist($question);
+            $entityManager->flush();
 
             $data = $this->getDoctrine()
                          ->getRepository(QuestionSondage::class)
@@ -41,6 +40,4 @@ class SondageController extends AbstractController
             'formSondage' => $form->createView()
         ]);
     }
-
-    
 }
